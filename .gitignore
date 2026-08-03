@@ -1,0 +1,13 @@
+# Backups locais
+*.bak
+*.bak2
+*.bak3
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude / planos locais
+.claude/
