@@ -1,0 +1,125 @@
+/* ============================================================
+   base.css — Reset, typography, scrollbar, body overlays, brand watermarks, glass + tac-card base
+   КРЕМЛЬ · Imperial Byzantine Design System v2.0
+   ============================================================ */
+*{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; box-sizing:border-box; }
+*::-webkit-scrollbar{ width:8px; height:8px; }
+*::-webkit-scrollbar-track{ background:transparent; }
+*::-webkit-scrollbar-thumb{ background:linear-gradient(180deg,#163A7E,#4A86D6); border-radius:4px; }
+*::-webkit-scrollbar-thumb:hover{ background: var(--accent-gold-soft); }
+
+html,body{
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family:'Inter','SF Pro Display','Segoe UI',sans-serif;
+  font-size:15px;
+  line-height:1.55;
+  letter-spacing:0;
+}
+::selection{ background: rgba(74,134,214,.32); color:#fff; }
+
+.font-tact{ font-family:'Inter',sans-serif; letter-spacing:.01em; }
+.font-mono{ font-family:'JetBrains Mono','SF Mono',monospace; }
+.font-display{ font-family:'Playfair Display','Inter',serif; letter-spacing:-.01em; font-weight:600; }
+.font-mil{ font-family:'Inter',sans-serif; letter-spacing:.14em; font-weight:600; text-transform:uppercase; }
+
+/* Body -------------------------------------------------------- */
+body{
+  background: var(--bg-primary);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+/* Brilho azul superior */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background: radial-gradient(1200px 520px at 50% -12%, rgba(74,134,214,.06), transparent 62%);
+}
+/* Grão de filme — textura premium */
+body::after{
+  content:""; position:fixed; inset:0; z-index:9999; pointer-events:none;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:.035;
+}
+
+/* Águia bicéfala imperial — marca d'água global ---------------- */
+.brand-watermark{
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Tsar_Nicholas_II_-1898.jpg?width=900");
+  background-position:91% 5%;
+  background-repeat:no-repeat;
+  background-size:430px 560px;
+  opacity:.22;
+  filter:grayscale(.45) sepia(.18) hue-rotate(178deg) saturate(1.35) brightness(.95) contrast(1.08);
+  -webkit-mask-image:radial-gradient(520px 580px at 91% 7%, #000 30%, transparent 80%);
+  mask-image:radial-gradient(520px 580px at 91% 7%, #000 30%, transparent 80%);
+}
+.flag-watermark{
+  position:fixed; left:-80px; bottom:-80px; pointer-events:none; z-index:0;
+  width:460px; height:300px;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.05) 0 33.33%,
+      rgba(0,57,166,.05) 33.33% 66.66%,
+      rgba(213,43,30,.05) 66.66% 100%);
+  filter: blur(28px);
+  opacity:.7;
+}
+
+/* Removidos (legado) ------------------------------------------- */
+.scanlines,.noise,.particles{ display:none; }
+.blink,.blink-text,.red-alert,.tactical-in{ animation:none; }
+
+/* Glass ------------------------------------------------------- */
+.glass{
+  background: rgba(20,20,24,.62);
+  backdrop-filter: blur(18px) saturate(118%);
+  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  border:1px solid var(--line-default);
+  box-shadow: var(--shadow-md);
+}
+.glass-tac{
+  background: linear-gradient(180deg, rgba(29,29,35,.92), rgba(16,16,20,.92));
+  border:1px solid var(--line-default);
+  border-radius: var(--radius-md);
+  position:relative;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.glass-tac::before{ display:none; }
+.glass-tac:hover{
+  border-color: rgba(74,134,214,.32);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Cards ------------------------------------------------------- */
+.tac-card{
+  position:relative; overflow:hidden;
+  background: linear-gradient(180deg, rgba(29,29,35,.92), rgba(15,15,19,.92));
+  border:1px solid var(--line-default);
+  border-radius: var(--radius-md);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+.tac-card::after{
+  content:""; position:absolute; top:0; left:0; right:0; height:1px;
+  background: var(--gold-grad);
+  transform: scaleX(0); transform-origin:left; opacity:0;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
+}
+.tac-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(74,134,214,.34);
+  box-shadow: var(--shadow-lg);
+}
+.tac-card:hover::after{ transform: scaleX(1); opacity:.85; }
+.tac-card .tac-header{
+  background: transparent;
+  border-bottom:1px solid var(--line-default);
+  padding:1rem 1.25rem;
+}
+
+.card-blue:hover{ border-color: rgba(74,134,214,.4); }
+.card-blue .tac-header{ background: rgba(74,134,214,.06); border-bottom-color: rgba(74,134,214,.22); }
+.card-gold:hover{ border-color: rgba(214,228,247,.5); }
+.card-gold .tac-header{ background: rgba(74,134,214,.07); border-bottom-color: rgba(74,134,214,.26); }
+.card-red:hover{ border-color: rgba(192,74,74,.45); }
+.card-red .tac-header{ background: rgba(139,30,30,.08); border-bottom-color: rgba(139,30,30,.3); }

@@ -1,0 +1,42 @@
+/* ============================================================
+   tokens.css — Design tokens: color palette, spacing, radii, shadows, gradients
+   КРЕМЛЬ · Imperial Byzantine Design System v2.0
+   ============================================================ */
+:root{
+  /* Fundo — ônix quente */
+  --bg-primary:     #0A0A0C;
+  --bg-secondary:   #101013;
+  --bg-tertiary:    #16161B;
+  --bg-elevated:    #1D1D23;
+  /* Linhas — quentes */
+  --line-subtle:    #1C1C22;
+  --line-default:   #2A2A31;
+  --line-focus:     #4A3F2A;
+  /* Texto — marfim */
+  --text-primary:   #F4ECD8;
+  --text-secondary: #B6AE9E;
+  --text-tertiary:  #7A7466;
+  --text-muted:     #494540;
+  /* Ouro imperial — acento PRIMÁRIO */
+  --accent-gold:        #4A86D6;
+  --accent-gold-soft:   #A9C6EE;
+  --accent-gold-bright: #D6E4F7;
+  /* Selo carmesim — ataque / alerta */
+  --accent-red:        #8B1E1E;
+  --accent-red-soft:   #C04A4A;
+  --accent-crimson:    #8B1E1E;
+  /* Legado (referenciado em markup/JS como "azul") → remapeado para azul-bandeira */
+  --accent-blue:       #4A86D6;
+  --accent-blue-soft:  #A9C6EE;
+  /* Verde imperial discreto */
+  --accent-green:      #6E8F4E;
+  /* Semantics */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+  --shadow-md: 0 6px 18px rgba(0,0,0,.42);
+  --shadow-lg: 0 18px 42px rgba(0,0,0,.48);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --gold-grad: linear-gradient(135deg,#1E4FA8 0%, #4A86D6 35%, #A9C6EE 55%, #4A86D6 70%, #163A7E 100%);
+  --gold-line: linear-gradient(90deg, transparent, rgba(74,134,214,.55), transparent);
+}
