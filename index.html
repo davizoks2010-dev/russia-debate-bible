@@ -241,6 +241,7 @@
             <a class="blade-tab cmd-pill" data-target="files" role="menuitem" style="--i:6"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Documentos</span></a>
             <a class="blade-tab cmd-pill res-tab-double" data-target="resolucao" role="menuitem" style="--i:7"><i data-lucide="scale" class="w-3.5 h-3.5"></i><span>Resolução</span></a>
             <a class="blade-tab cmd-pill res-tab-double" data-target="pautas" role="menuitem" style="--i:8"><i data-lucide="map" class="w-3.5 h-3.5"></i><span>Pautas</span></a>
+            <a class="blade-tab cmd-pill res-tab-double" data-target="gemini" role="menuitem" style="--i:9"><i data-lucide="search-code" class="w-3.5 h-3.5"></i><span>Gemini</span></a>
           </div>
         </div>
       </div>
@@ -808,6 +809,67 @@
           <div id="pautasGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
         </section>
 
+        <!-- ========== J. PESQUISA SOBERANA · GEMINI (Módulo 10) ========== -->
+        <section class="section" data-section="gemini">
+          <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">✦</div>
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="classified text-[var(--accent-gold-soft)]">Módulo 10 · PESQUISA SOBERANA · LLM REMOTO</div>
+                <span class="sov-stamp sov-stamp--topsecret">СОВЕРШЕННО СЕКРЕТНО</span>
+              </div>
+              <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Pesquisa &amp; Fala · IA Soberana</h2>
+              <p class="font-display italic text-[var(--text-secondary)] text-sm mt-2 max-w-3xl">
+                Pesquisa livre + geração de falas-modelo, com base nos 8 vetores doutrinários e nas citações oficiais.
+                Chave de API armazenada como variável de ambiente no servidor — o front nunca a vê.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 mt-3">
+                <span class="badge badge-red">SOCHUM • CIMED 2026</span>
+                <span class="badge badge-gold">GROQ · LLAMA 3.1 70B</span>
+                <span class="badge badge-slate">GROQ_API_KEY EM ENV VAR</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <aside>
+              <div class="classified text-[var(--gold-soft)] mb-2">Atalhos Táticos</div>
+              <div id="geminiShortcuts" class="space-y-2"></div>
+            </aside>
+
+            <div class="lg:col-span-2 space-y-4">
+              <div class="tac-card glass-tac p-4">
+                <div class="flex items-center gap-2 mb-3 flex-wrap">
+                  <select id="geminiMode" class="bg-[var(--bg-deep)] border border-[var(--line-default)] rounded px-2 py-1 text-xs text-white">
+                    <option value="search">Pesquisa livre</option>
+                    <option value="speech">Geração de fala-modelo</option>
+                  </select>
+                  <span class="text-[var(--text-tertiary)] text-[.65rem] font-mono">Ctrl+Enter para enviar</span>
+                </div>
+                <textarea id="geminiQuery" rows="4"
+                  class="w-full bg-transparent border border-[var(--line-default)] rounded p-3 text-sm text-white font-display"
+                  placeholder=""></textarea>
+                <div class="flex items-center gap-2 mt-3 flex-wrap">
+                  <button id="geminiSubmit" class="btn btn-tac text-xs">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i> Enviar
+                  </button>
+                  <button id="geminiClear" class="btn btn-ghost text-xs">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Limpar
+                  </button>
+                  <span id="geminiStatus" class="text-[var(--text-tertiary)] text-[.7rem] font-mono ml-auto"></span>
+                </div>
+              </div>
+
+              <div id="geminiOutput"></div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="classified text-[var(--gold-soft)] mb-2">Histórico · Últimas consultas</div>
+            <div id="geminiHistory" class="space-y-2"></div>
+          </div>
+        </section>
+
       </main>
     </div>
 
@@ -822,6 +884,7 @@
       <a class="bn-item" data-target="files"><i data-lucide="file-text" class="w-4 h-4"></i>Docs</a>
       <a class="bn-item" data-target="resolucao"><i data-lucide="scale" class="w-4 h-4"></i>Resolução</a>
       <a class="bn-item" data-target="pautas"><i data-lucide="map" class="w-4 h-4"></i>Pautas</a>
+      <a class="bn-item" data-target="gemini"><i data-lucide="search-code" class="w-4 h-4"></i>Gemini</a>
     </nav>
   </div>
 

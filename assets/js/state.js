@@ -7,6 +7,7 @@ export const STORAGE_KEYS = {
   pinned:    'kr_pinned_v2',
   prefs:     'kr_prefs_v2',
   speechLog: 'kr_speech_log_v2',
+  geminiLog: 'kr_gemini_log_v2',
 };
 
 export const state = {

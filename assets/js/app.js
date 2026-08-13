@@ -20,6 +20,7 @@ import { initDocuments } from './documents.js';
 import { initDoctrine } from './doctrine.js';
 import { initResolutions } from './resolutions.js';
 import { initPautas } from './pautas.js';
+import { initGemini } from './gemini.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initState();
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDoctrine();
   initResolutions();
   initPautas();
+  initGemini();
 
   refreshPin();
   renderSpeechList();

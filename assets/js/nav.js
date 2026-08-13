@@ -44,9 +44,9 @@ export function bindNav() {
 /* Sidebar removida — noop mantido para compatibilidade */
 export function closeSidebar() {}
 
-/* Atalhos de teclado: 1-9 → módulos */
+/* Atalhos de teclado: 1-9, 0 → módulos */
 export function bindHotkeys() {
-  const map = { '1':'warroom', '2':'intel', '3':'arsenal', '4':'shield', '5':'generator', '6':'speech', '7':'files', '8':'resolucao', '9':'pautas' };
+  const map = { '1':'warroom', '2':'intel', '3':'arsenal', '4':'shield', '5':'generator', '6':'speech', '7':'files', '8':'resolucao', '9':'pautas', '0':'gemini' };
   document.addEventListener('keydown', (e) => {
     const tag = (e.target.tagName || '').toLowerCase();
     if (/input|textarea|select|tiptap/i.test(tag)) return;
