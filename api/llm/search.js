@@ -13,7 +13,7 @@
    ============================================================ */
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-70b-versatile';
+const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
 const MAX_QUERY_LEN = 2000;
 const ALLOWED_MODES = new Set(['search', 'speech']);
 
@@ -121,7 +121,15 @@ export default async function handler(req, res) {
   if (!resp.ok) {
     const errText = await resp.text().catch(() => '');
     console.error('[llm/search] Groq status', resp.status, errText.slice(0, 500));
-    if (resp.status === 401) return bad(res, 502, 'Chave Groq rejeitada (inválida ou expirada)');
+    if (resp.status === 401) return bad(res, 502, 'Chave Groq rejeitada (inválida ou expirada). Verifique GROQ_API_KEY no dashboard Vercel.');
+    if (resp.status === 400) {
+      /* Tentar extrair mensagem útil do erro JSON */
+      try {
+        const errJson = JSON.parse(errText);
+        const msg = errJson?.error?.message || errText.slice(0, 300);
+        return bad(res, 502, `Groq rejeitou o pedido: ${msg}`);
+      } catch (_) { return bad(res, 502, `Groq respondeu 400: ${errText.slice(0, 300)}`); }
+    }
     return bad(res, 502, `Groq respondeu ${resp.status}`);
   }
 

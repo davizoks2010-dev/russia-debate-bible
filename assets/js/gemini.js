@@ -190,7 +190,7 @@ async function submitGemini() {
 
     renderOutputSuccess(data, mode, query);
     appendHistory({ ts: new Date().toISOString(), mode, query, text: data.text });
-    setStatus(`Resposta em ${data.model || 'llama-3.1-70b-versatile'}.`);
+    setStatus(`Resposta em ${data.model || 'llama-3.3-70b-versatile'}.`);
   } catch (e) {
     renderOutputError('Erro de rede. Verifique conexão.', 0);
     setStatus('Falhou.');
@@ -239,7 +239,7 @@ function renderOutputSuccess(data, mode, query) {
       <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
         <div class="flex items-center gap-2">
           <span class="badge ${mode === 'speech' ? 'badge-red' : 'badge-gold'} text-[.55rem]">${mode === 'speech' ? 'FALA' : 'PESQUISA'}</span>
-          <span class="font-mono text-[.55rem] text-[var(--text-tertiary)]">${data.model || 'llama-3.1-70b-versatile'}</span>
+          <span class="font-mono text-[.55rem] text-[var(--text-tertiary)]">${data.model || 'llama-3.3-70b-versatile'}</span>
         </div>
         <div class="flex gap-1.5">
           <button type="button" class="btn btn-ghost text-[.6rem] !py-1" data-gemini-copy>
