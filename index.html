@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>КРЕМЛЬ — Sistema de Inteligência Diplomática</title>
-  <meta name="theme-color" content="#0A0A0C" />
-  <meta name="description" content="КРЕМЛЬ — Sistema de Inteligência Diplomática. Uso restrito da Delegação da Federação Russa — CIMED ONU. Classificado." />
+  <title>КРЕМЛЬ · Ritus — Sistema de Inteligência Diplomática</title>
+  <meta name="theme-color" content="#0A0908" />
+  <meta name="description" content="КРЕМЛЬ · Ritus — Sistema de Inteligência Diplomática. Uso restrito da Delegação da Federação Russa — CIMED ONU. Classificado. O que é selado com sangue, permanece." />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,18 +34,11 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/sections.css">
   <link rel="stylesheet" href="assets/css/fx.css">
+  <link rel="stylesheet" href="assets/css/sov.css">
 
   <style>
-    /* Variáveis referenciadas inline (preservadas para JS) */
-    :root{
-      --bg-primary:#0A0A0C; --bg-secondary:#101013; --bg-tertiary:#16161B; --bg-elevated:#1D1D23;
-      --line-subtle:#1C1C22; --line-default:#2A2A31; --line-focus:#4A3F2A;
-      --text-primary:#F4ECD8; --text-secondary:#B6AE9E; --text-tertiary:#7A7466; --text-muted:#494540;
-      --accent-gold:#4A86D6; --accent-gold-soft:#A9C6EE; --accent-gold-bright:#D6E4F7;
-      --accent-red:#8B1E1E; --accent-red-soft:#C04A4A;
-      --accent-blue:#4A86D6; --accent-blue-soft:#A9C6EE;
-      --radius-sm:6px; --radius-md:10px; --radius-lg:14px;
-    }
+    /* Tokens inline — alinhados com tokens.css (Cera & Sangue).
+       O Tailwind CDN injeta variáveis próprias; este bloco garante a versão canônica. */
     .line-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .line-clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
     /* Tiptap basic styles */
@@ -54,14 +47,14 @@
     .tiptap h1,.tiptap h2,.tiptap h3 { font-family:'Playfair Display',serif; font-weight:600; margin:.7em 0 .3em; color:var(--text-primary); }
     .tiptap h1 { font-size:1.6rem; } .tiptap h2 { font-size:1.3rem; } .tiptap h3 { font-size:1.1rem; }
     .tiptap ul,.tiptap ol { padding-left:1.4rem; margin:.4em 0; color:var(--text-secondary); }
-    .tiptap code { background:rgba(74,134,214,.10); padding:.1em .35em; border-radius:3px; font-family:'JetBrains Mono',monospace; font-size:.85em; color:var(--accent-gold-soft); }
-    .tiptap blockquote { border-left:3px solid var(--accent-gold); padding-left:.8rem; color:var(--text-secondary); font-style:italic; }
+    .tiptap code { background:rgba(201,162,74,.10); padding:.1em .35em; border-radius:3px; font-family:'JetBrains Mono',monospace; font-size:.85em; color:var(--gold-soft); }
+    .tiptap blockquote { border-left:3px solid var(--gold); padding-left:.8rem; color:var(--text-secondary); font-style:italic; }
     .tiptap p.is-editor-empty:first-child::before { content:attr(data-placeholder); float:left; color:var(--text-tertiary); pointer-events:none; height:0; }
-    .tiptap a { color:var(--accent-gold-soft); text-decoration:underline; }
-    .tiptap strong { color:var(--accent-gold-bright); }
+    .tiptap a { color:var(--gold-soft); text-decoration:underline; }
+    .tiptap strong { color:var(--gold-bright); }
     /* Upload drop zone */
     .upload-drop { border:2px dashed var(--line-default); border-radius: var(--radius-md); padding:2rem 1rem; text-align:center; transition:border-color .2s ease, background .2s ease; cursor:pointer; }
-    .upload-drop:hover,.upload-drop.is-active { border-color:var(--accent-gold); background:rgba(74,134,214,.04); }
+    .upload-drop:hover,.upload-drop.is-active { border-color:var(--gold); background:rgba(201,162,74,.06); }
     .upload-drop .lucide { color:var(--text-tertiary); }
   </style>
 </head>
@@ -70,7 +63,7 @@
   <!-- ATMOSPHERE -->
   <div class="brand-watermark"></div>
   <div class="flag-watermark"></div>
-  <div aria-hidden="true" style="height:4px;background:linear-gradient(180deg,#FFFFFF 0 33.33%,#0039A6 33.33% 66.66%,#D52B1E 66.66% 100%);"></div>
+  <div aria-hidden="true" style="height:4px;background:linear-gradient(90deg,#F4E8C8 0 33.33%,#0B1B4A 33.33% 66.66%,#C8362C 66.66% 100%);"></div>
 
   <!-- ============================================================
        LOGIN
@@ -109,11 +102,13 @@
 
     <div class="relative w-full max-w-md fade-up">
       <div class="text-center mb-8">
-        <div class="seal-portrait mx-auto mb-5" style="width:76px;height:76px;">
+        <div class="seal-portrait mx-auto mb-5" style="width:84px;height:84px;">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tsar_Nicholas_II_-1898.jpg?width=200" alt="Nicolau II" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('seal-portrait--fail');" />
         </div>
-        <h1 class="font-display text-2xl sm:text-3xl text-white tracking-tight">FEDERAÇÃO RUSSA</h1>
-        <p class="text-[var(--text-secondary)] text-sm mt-2 tracking-wide">ACESSO DIPLOMÁTICO</p>
+        <div class="text-[var(--gold-soft)] text-[.55rem] tracking-[.42em] uppercase mb-2">Custodia Sigilli</div>
+        <h1 class="font-ceremonial text-[1.6rem] sm:text-[1.85rem] text-white tracking-[.08em] uppercase">Federação Russa</h1>
+        <div class="cls-ribbon my-4"></div>
+        <p class="font-ceremonial text-[var(--gold-soft)] text-[.7rem] tracking-[.36em] uppercase">Acesso Diplomático</p>
       </div>
 
       <div class="login-card p-6 sm:p-8">
@@ -213,21 +208,21 @@
             <svg class="sword-svg" viewBox="0 0 40 40" aria-hidden="true">
               <defs>
                 <linearGradient id="bladeGrad" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#163A7E"/>
-                  <stop offset=".5" stop-color="#A9C6EE"/>
-                  <stop offset="1" stop-color="#D6E4F7"/>
+                  <stop offset="0" stop-color="#6B5328"/>
+                  <stop offset=".5" stop-color="#E8C76E"/>
+                  <stop offset="1" stop-color="#F4D88A"/>
                 </linearGradient>
                 <clipPath id="bladeClip"><path d="M9 30 Q19 21 33 7 L35 9 Q21 22 11 31 Z"/></clipPath>
               </defs>
               <g class="sword-blade">
-                <path d="M9 30 Q19 21 33 7 L35 9 Q21 22 11 31 Z" fill="url(#bladeGrad)" stroke="#1E4FA8" stroke-width=".7"/>
-                <path d="M10.5 30 Q20 21 33 8.4" fill="none" stroke="#FFFFFF" stroke-width=".5" opacity=".75"/>
+                <path d="M9 30 Q19 21 33 7 L35 9 Q21 22 11 31 Z" fill="url(#bladeGrad)" stroke="#6B5328" stroke-width=".7"/>
+                <path d="M10.5 30 Q20 21 33 8.4" fill="none" stroke="#F4D88A" stroke-width=".5" opacity=".85"/>
                 <g clip-path="url(#bladeClip)"><rect class="sword-sheen" x="9" y="6" width="5" height="28" fill="#FFFFFF" opacity=".6" transform="rotate(34 9 30)"/></g>
               </g>
               <g class="sword-grip">
-                <path d="M5.2 31.4 L10.2 36.4 L8.6 38 L3.6 33 Z" fill="#3a2a22" stroke="#6B5544" stroke-width=".5"/>
-                <path d="M5.4 32.4 L9.4 36.4 M4.8 33.2 L8.6 37" stroke="#7a5e48" stroke-width=".4" fill="none"/>
-                <circle cx="4" cy="32.6" r="1.5" fill="#A9C6EE" stroke="#1E4FA8" stroke-width=".4"/>
+                <path d="M5.2 31.4 L10.2 36.4 L8.6 38 L3.6 33 Z" fill="#3A2A22" stroke="#6B5328" stroke-width=".5"/>
+                <path d="M5.4 32.4 L9.4 36.4 M4.8 33.2 L8.6 37" stroke="#7A5E48" stroke-width=".4" fill="none"/>
+                <circle cx="4" cy="32.6" r="1.5" fill="#E8C76E" stroke="#6B5328" stroke-width=".4"/>
               </g>
             </svg>
             <span class="sword-etch" id="swordEtch">War Room</span>
@@ -243,7 +238,9 @@
             <a class="blade-tab cmd-pill" data-target="shield" role="menuitem" style="--i:3"><i data-lucide="shield" class="w-3.5 h-3.5"></i><span>Escudo</span></a>
             <a class="blade-tab cmd-pill" data-target="generator" role="menuitem" style="--i:4"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Requerimentos</span></a>
             <a class="blade-tab cmd-pill" data-target="speech" role="menuitem" style="--i:5"><i data-lucide="bookmark" class="w-3.5 h-3.5"></i><span>Discurso</span></a>
-            <a class="blade-tab cmd-pill" data-target="files" role="menuitem" style="--i:6"><i data-lucide="folder-open" class="w-3.5 h-3.5"></i><span>Arquivos</span></a>
+            <a class="blade-tab cmd-pill" data-target="files" role="menuitem" style="--i:6"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Documentos</span></a>
+            <a class="blade-tab cmd-pill res-tab-double" data-target="resolucao" role="menuitem" style="--i:7"><i data-lucide="scale" class="w-3.5 h-3.5"></i><span>Resolução</span></a>
+            <a class="blade-tab cmd-pill res-tab-double" data-target="pautas" role="menuitem" style="--i:8"><i data-lucide="map" class="w-3.5 h-3.5"></i><span>Pautas</span></a>
           </div>
         </div>
       </div>
@@ -256,11 +253,13 @@
         <!-- ========== A. WAR ROOM ========== -->
         <section class="section active" data-section="warroom">
           <div class="hero-shell relative p-5 sm:p-7 fade-up overflow-hidden">
+            <div class="hero-sigil" aria-hidden="true">✦</div>
             <div class="relative z-10">
               <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div class="flex flex-wrap items-center gap-2">
                   <span class="badge badge-red">SOCHUM • CIMED 2026</span>
                   <span class="badge badge-gold">DELEGAÇÃO SOBERANA</span>
+                  <span class="sov-stamp sov-stamp--topsecret">СОВЕРШЕННО СЕКРЕТНО</span>
                   <span class="badge badge-slate">DOC. CLAS. IV</span>
                 </div>
                 <div class="flex items-center gap-3">
@@ -271,21 +270,29 @@
                 </div>
               </div>
 
-              <div class="font-display font-semibold tracking-tight text-[var(--accent-gold-soft)] text-lg sm:text-xl">РОССИЯ</div>
-              <h1 class="font-display text-lg sm:text-xl text-white mt-1 leading-snug max-w-3xl">
+              <div class="font-ceremonial font-medium tracking-[.42em] text-[var(--gold-bright)] text-[.85rem] sm:text-[.95rem] uppercase">RÚSSIA</div>
+              <h1 class="font-ceremonial text-base sm:text-lg text-white mt-1.5 leading-snug max-w-3xl tracking-wide uppercase">
                 Defesa dos Direitos da Criança em Conflitos Armados
               </h1>
-              <p class="text-[var(--text-secondary)] mt-2 max-w-2xl text-xs sm:text-sm leading-relaxed">
+              <p class="font-display italic text-[var(--text-secondary)] mt-2.5 max-w-2xl text-[.92rem] leading-relaxed">
                 Painel de comando da Delegação Soberana da Federação Russa. Monitoramento de riscos,
                 arsenal ofensivo e defesas diplomáticas para a sessão da ONU.
               </p>
 
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5 max-w-3xl">
-                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="30">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Dossiês</div></div>
-                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="25">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Ofensivas</div></div>
-                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="25">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Defesas</div></div>
-                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="280">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Linhas</div></div>
+                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="dynamic-conflicts">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Dossiês</div></div>
+                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="dynamic-attacks">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Ofensivas</div></div>
+                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="dynamic-defenses">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Defesas</div></div>
+                <div class="glass-tac px-3.5 py-3"><div class="counter" data-target="dynamic-lines">0</div><div class="text-[var(--text-tertiary)] text-[.65rem] mt-0.5 uppercase tracking-wider">Linhas</div></div>
               </div>
+            </div>
+          </div>
+
+          <!-- TICKER URGENTE — Comunicado contínuo -->
+          <div class="sov-ticker mt-3 fade-up fade-up-delay-1">
+            <div class="sov-ticker__badge"><i data-lucide="alert-triangle" class="w-3 h-3"></i> КОММУНИКАТ · URGENTE</div>
+            <div class="sov-ticker__track">
+              <div class="sov-ticker__content" id="tickerTrack">Carregando comunicados soberanos…</div>
             </div>
           </div>
 
@@ -296,6 +303,10 @@
               <div class="flex items-center justify-between mb-4">
                 <div class="classified text-[var(--accent-gold-soft)]">Painel Soberano</div>
                 <span class="status-led green"></span>
+              </div>
+              <div class="sov-header mb-3">
+                <span class="sov-header__serial">▲ КРЕМЛЬ-АΩ-2026</span>
+                <span class="sov-header__label">Painel de Comando · Ativo</span>
               </div>
 
               <div class="flex justify-center my-2">
@@ -428,16 +439,51 @@
               </div>
             </div>
 
+            <!-- DOUTRINA VETORIAL -->
+            <div class="glass-tac p-4 sm:p-5 fade-up fade-up-delay-3 lg:col-span-3">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <div class="classified text-[var(--gold-soft)]">Doutrina Vetorial</div>
+                  <h3 class="font-ceremonial text-lg text-white mt-1">Vetores Estratégicos Soberanos</h3>
+                </div>
+                <i data-lucide="compass" class="w-5 h-5 text-[var(--gold-soft)]"></i>
+              </div>
+              <p class="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
+                Seis fundamentos doutrinários sobre Gaza, Sahel, DIH/Criança, Reforma CSNU, Soberania Cibernética e Multipolaridade.
+                Cada vetor tem base jurídica, falas-modelo e fundamento escrito.
+              </p>
+              <div id="warVectors" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+            </div>
+
+            <!-- CITAÇÕES DE CHANCELERES -->
+            <div class="glass-tac p-4 sm:p-5 fade-up fade-up-delay-3 lg:col-span-3">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <div class="classified text-[var(--gold-soft)]">Arsenal Filosófico</div>
+                  <h3 class="font-ceremonial text-lg text-white mt-1">Citações de Chanceleres & Instrumentos</h3>
+                </div>
+                <i data-lucide="quote" class="w-5 h-5 text-[var(--gold-soft)]"></i>
+              </div>
+              <p class="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
+                Lavrov, Guterres, Putin, chanceleres do BRICS, pareceres CIJ, resoluções CSNU. Use para abrir fala, conferir autoridade à posição ou responder acusação.
+              </p>
+              <div id="warCitations" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[440px] overflow-y-auto pr-2"></div>
+            </div>
+
           </div>
         </section>
 
         <!-- ========== B. INTEL ========== -->
         <section class="section" data-section="intel">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">❦</div>
             <div class="relative z-10">
-              <div class="classified text-[var(--text-tertiary)]">Módulo 02</div>
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                <div class="classified text-[var(--text-tertiary)]">Módulo 02</div>
+                <span class="sov-stamp sov-stamp--secret">СЕКРЕТНО</span>
+              </div>
               <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Central de Inteligência</h2>
-              <p class="text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
+              <p class="font-display italic text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
                 Banco de dados massivo. Pesquise qualquer conflito, país, tratado ou palavra-chave.
                 Dossiês com cronologia, dados oficiais, discursos prontos e linhas defensivas por acusação.
               </p>
@@ -472,9 +518,13 @@
         <!-- ========== C. ARSENAL ========== -->
         <section class="section" data-section="arsenal">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">✶</div>
             <div class="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <div class="classified text-[var(--text-tertiary)]">Módulo 03</div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <div class="classified text-[var(--text-tertiary)]">Módulo 03</div>
+                  <span class="sov-stamp sov-stamp--restricted">ДСП · PARA USO OFICIAL</span>
+                </div>
                 <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Arsenal de Ataque</h2>
                 <p class="text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
                   Ofensiva contra todas as delegações. Hipocrisia histórica, armadilhas retóricas e resoluções-arco.
@@ -493,9 +543,13 @@
         <!-- ========== D. SHIELD ========== -->
         <section class="section" data-section="shield">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">✧</div>
             <div class="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <div class="classified text-[var(--text-tertiary)]">Módulo 04</div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <div class="classified text-[var(--text-tertiary)]">Módulo 04</div>
+                  <span class="sov-stamp sov-stamp--secret">СЕКРЕТНО · ESCUDO</span>
+                </div>
                 <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Escudo Defensivo</h2>
                 <p class="text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
                   Contra-argumentação matriz a todas as narrativas anti-Rússia. Cada acusação com base jurídica e pivot tático.
@@ -514,9 +568,13 @@
         <!-- ========== E. GENERATOR ========== -->
         <section class="section" data-section="generator">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">❖</div>
             <div class="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <div class="classified text-[var(--text-tertiary)]">Módulo 05</div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <div class="classified text-[var(--text-tertiary)]">Módulo 05</div>
+                  <span class="sov-stamp sov-stamp--restricted">GERADOR · КОНВЕЙЕР</span>
+                </div>
                 <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Gerador de Requerimentos & Discursos</h2>
                 <p class="text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
                   Monte discursos de 1 minuto, moções e interpelações em tempo real durante a sessão.
@@ -577,8 +635,11 @@
             </div>
 
             <div class="lg:col-span-1">
-              <div class="text-[var(--text-tertiary)] text-xs font-medium mb-2">Saída</div>
-              <div class="output-terminal" id="genOutput"><div class="inner text-[var(--text-tertiary)]">// aguardando configuração...</div></div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="text-[var(--text-tertiary)] text-xs font-medium">Saída · Terminal Soberano</div>
+                <span class="sov-stamp sov-stamp--topsecret" style="font-size:.55rem">ΠΕЧАТЬ · IMPRESSO</span>
+              </div>
+              <div class="sov-terminal" id="genOutput"><span class="sov-terminal-prompt">$</span><span class="inner text-[var(--text-tertiary)]">aguardando configuração...</span><span class="sov-terminal-cursor"></span></div>
               <div class="flex flex-wrap gap-2 mt-3">
                 <button id="copyGen" class="btn btn-ghost text-xs"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar</button>
                 <button id="clearGen" class="btn btn-ghost text-xs"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Limpar</button>
@@ -586,6 +647,8 @@
               </div>
             </div>
           </div>
+
+          <div id="genHistory" class="mt-5"></div>
 
           <div class="glass-tac p-5 mt-5">
             <div class="flex items-center justify-between mb-3">
@@ -602,6 +665,7 @@
         <!-- ========== F. SPEECH PANEL ========== -->
         <section class="section" data-section="speech">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">❂</div>
             <div class="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <div class="classified text-[var(--text-tertiary)]">Painel</div>
@@ -612,6 +676,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <span class="badge badge-gold" id="pinnedTotal">0 ITENS</span>
+                <button id="exportSession" class="btn btn-ghost text-xs"><i data-lucide="download" class="w-3.5 h-3.5"></i> Exportar</button>
                 <button id="clearPinned" class="btn btn-ghost text-xs"><i data-lucide="trash" class="w-3.5 h-3.5"></i> Limpar</button>
               </div>
             </div>
@@ -626,71 +691,121 @@
           </div>
         </section>
 
-        <!-- ========== G. FILES (Módulo novo) ========== -->
+        <!-- ========== G. DOCUMENTOS (Módulo novo) ========== -->
         <section class="section" data-section="files">
           <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">✷</div>
             <div class="relative z-10">
               <div class="classified text-[var(--accent-gold-soft)]">Módulo 07</div>
-              <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Arquivos Soberanos</h2>
+              <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Documentos Soberanos</h2>
               <p class="text-[var(--text-secondary)] text-sm mt-2 max-w-2xl">
-                Faça upload de DPOs, atas, modelos .docx, fotos, imagens. Edite notas Tiptap diretamente no app.
-                Armazenamento criptografado via Vercel Blob.
+                Acervo diplomático da Federação Russa — DPOs, moções-modelo, falas de 1 minuto, posicionamentos oficiais e resoluções-modelo. Tudo curado em data soberana.
               </p>
+              <span class="sov-stamp sov-stamp--restricted mt-3 inline-block">ДСП · PARA USO OFICIAL</span>
             </div>
           </div>
 
-          <!-- Upload drop zone -->
-          <div class="glass-tac p-5 mb-5 fade-up fade-up-delay-1">
-            <div id="uploadDrop" class="upload-drop">
-              <i data-lucide="upload-cloud" class="w-10 h-10 mx-auto mb-3"></i>
-              <div class="text-white text-base font-display">Arraste arquivos aqui</div>
-              <p class="text-[var(--text-secondary)] text-sm mt-1">ou</p>
-              <button id="uploadPick" class="btn btn-tac text-xs mt-3">
-                <i data-lucide="folder-plus" class="w-3.5 h-3.5"></i> Selecionar arquivos
-              </button>
-              <input id="uploadInput" type="file" multiple class="hidden">
-              <p class="text-[var(--text-tertiary)] text-[.7rem] mt-3 font-mono">PDF · DOCX · JPG · PNG · até 25MB cada</p>
-            </div>
-          </div>
-
-          <!-- Tiptap + lista de notas -->
-          <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-5 mb-5">
-            <div class="glass-tac p-4 fade-up fade-up-delay-2">
-              <div class="flex items-center justify-between mb-3">
-                <div class="classified text-[var(--text-tertiary)]">Notas</div>
-                <span class="font-mono text-xs text-[var(--text-tertiary)]" id="notesCount">0</span>
-              </div>
-              <div id="notesList" class="space-y-2"></div>
-            </div>
-
-            <div class="glass-tac p-4 fade-up fade-up-delay-3">
-              <div class="flex items-center justify-between mb-3">
-                <div class="classified text-[var(--accent-gold-soft)]">Editor</div>
-                <div class="flex gap-1">
-                  <button id="noteNew" class="btn btn-ghost text-[.65rem] !p-1.5" title="Nova"><i data-lucide="file-plus-2" class="w-3 h-3"></i></button>
-                  <button id="noteSave" class="btn btn-ghost text-[.65rem] !p-1.5" title="Salvar"><i data-lucide="save" class="w-3 h-3"></i></button>
-                  <button id="noteExport" class="btn btn-ghost text-[.65rem] !p-1.5" title="Exportar HTML"><i data-lucide="download" class="w-3 h-3"></i></button>
-                  <button id="noteDelete" class="btn btn-ghost text-[.65rem] !p-1.5" title="Excluir"><i data-lucide="trash-2" class="w-3 h-3"></i></button>
-                </div>
-              </div>
-              <input id="noteTitle" type="text" placeholder="Título da nota..." class="tac-input mb-3">
-              <div class="tac-card border border-[var(--line-default)] rounded">
-                <div id="tiptapEditor"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lista de arquivos uploaded -->
-          <div class="glass-tac p-5 fade-up fade-up-delay-4">
-            <div class="flex items-center justify-between mb-3">
+          <!-- Filtros -->
+          <div class="glass-tac p-4 mb-5 fade-up fade-up-delay-1">
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr_2fr_auto] gap-3">
               <div>
-                <div class="classified text-[var(--text-tertiary)]">Acervo</div>
-                <h3 class="font-display text-lg text-white mt-1">Arquivos Armazenados</h3>
+                <div class="classified text-[var(--text-tertiary)] mb-2">Classificação</div>
+                <select id="docFilterClassification" class="tac-input">
+                  <option value="TODOS">Todas</option>
+                  <option value="topsecret">СОВЕРШЕННО СЕКРЕТНО</option>
+                  <option value="secret">СЕКРЕТНО</option>
+                  <option value="restricted">ДСП</option>
+                  <option value="unclass">НЕСЕКРЕТНО</option>
+                </select>
               </div>
-              <i data-lucide="database" class="w-5 h-5 text-[var(--text-tertiary)]"></i>
+              <div>
+                <div class="classified text-[var(--text-tertiary)] mb-2">Tipo</div>
+                <select id="docFilterType" class="tac-input">
+                  <option value="TODOS">Todos</option>
+                  <option value="dpo">DPO</option>
+                  <option value="mocao">Moção-modelo</option>
+                  <option value="fala">Fala de 1 min</option>
+                  <option value="pos">Posicionamento</option>
+                  <option value="resolucao">Resolução-modelo</option>
+                  <option value="ata">Ata CIMED</option>
+                </select>
+              </div>
+              <div>
+                <div class="classified text-[var(--text-tertiary)] mb-2">Tópico</div>
+                <select id="docFilterTopic" class="tac-input">
+                  <option value="TODOS">Todos</option>
+                </select>
+              </div>
+              <div>
+                <div class="classified text-[var(--text-tertiary)] mb-2">Busca</div>
+                <input id="docSearch" type="text" placeholder="Título, tag, conteúdo…" class="tac-input">
+              </div>
+              <div class="flex items-end">
+                <button id="docFilterReset" class="btn btn-ghost text-xs w-full"><i data-lucide="refresh-ccw" class="w-3 h-3"></i> Limpar</button>
+              </div>
             </div>
-            <div id="filesList" class="space-y-2"></div>
           </div>
+
+          <!-- Grid de documentos -->
+          <div class="glass-tac p-4 sm:p-5 fade-up fade-up-delay-2">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="classified text-[var(--text-tertiary)]">Acervo Soberano</div>
+                <h3 class="font-display text-lg text-white mt-1">Documentos Armazenados</h3>
+              </div>
+              <span class="font-mono text-xs text-[var(--text-tertiary)]" id="docsCount">0</span>
+            </div>
+            <div id="docsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+          </div>
+        </section>
+
+        <!-- ========== H. RESOLUÇÕES DIPLOMÁTICAS (Módulo 08) ========== -->
+        <section class="section" data-section="resolucao">
+          <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">❖</div>
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="classified text-[var(--accent-gold-soft)]">Módulo 08 · PROPOSTA SOBERANA</div>
+                <span class="sov-stamp sov-stamp--topsecret">СОВЕРШЕННО СЕКРЕТНО</span>
+              </div>
+              <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Resoluções Diplomáticas da Federação Russa</h2>
+              <p class="font-display italic text-[var(--text-secondary)] text-sm mt-2 max-w-3xl">
+                Três propostas para a sessão. Rússia <span class="text-[var(--crimson-bright)] font-semibold">DEFENDE</span> as três integralmente. Cada aba contém preâmbulo, cláusulas, ataques prováveis, defesas russas e base jurídica.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 mt-3">
+                <span class="badge badge-red">SOCHUM • CIMED 2026</span>
+                <span class="badge badge-gold">DELEGAÇÃO SOBERANA</span>
+                <span class="badge badge-slate">DOC. CLAS. IV</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="res-tabs-rail fade-up" id="resTabsRail" role="tablist" aria-label="Resoluções"></div>
+          <div id="resPanels" class="mt-4"></div>
+        </section>
+
+        <!-- ========== I. PAUTAS & CAMINHOS (Módulo 09) ========== -->
+        <section class="section" data-section="pautas">
+          <div class="hero-shell p-5 sm:p-6 mb-4 fade-up">
+            <div class="hero-sigil" aria-hidden="true">⚖</div>
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="classified text-[var(--accent-gold-soft)]">Módulo 09 · MAPA TÁTICO</div>
+                <span class="sov-stamp sov-stamp--secret">СЕКРЕТНО</span>
+              </div>
+              <h2 class="font-display text-xl sm:text-2xl text-white mt-1">Pautas &amp; Caminhos</h2>
+              <p class="font-display italic text-[var(--text-secondary)] text-sm mt-2 max-w-3xl">
+                Pautas prováveis que a mesa pode trazer + 2-3 caminhos táticos por pauta.
+                Extraído das <span class="text-[var(--gold-soft)]">13 Perguntas Orientadoras</span> do Guia de Estudo SOCHUM 2026.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 mt-3">
+                <span class="badge badge-red">SOCHUM • CIMED 2026</span>
+                <span class="badge badge-gold">8 PAUTAS</span>
+                <span class="badge badge-slate">DOC. CLAS. III</span>
+              </div>
+            </div>
+          </div>
+          <div id="pautasGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
         </section>
 
       </main>
@@ -704,7 +819,9 @@
       <a class="bn-item" data-target="shield"><i data-lucide="shield" class="w-4 h-4"></i>Escudo</a>
       <a class="bn-item" data-target="generator"><i data-lucide="file-text" class="w-4 h-4"></i>Gerar</a>
       <a class="bn-item" data-target="speech"><i data-lucide="bookmark" class="w-4 h-4"></i>Painel</a>
-      <a class="bn-item" data-target="files"><i data-lucide="folder-open" class="w-4 h-4"></i>Files</a>
+      <a class="bn-item" data-target="files"><i data-lucide="file-text" class="w-4 h-4"></i>Docs</a>
+      <a class="bn-item" data-target="resolucao"><i data-lucide="scale" class="w-4 h-4"></i>Resolução</a>
+      <a class="bn-item" data-target="pautas"><i data-lucide="map" class="w-4 h-4"></i>Pautas</a>
     </nav>
   </div>
 
@@ -720,52 +837,37 @@
 
   <!-- CRISIS / RED MODAL -->
   <div id="redModal" class="fixed inset-0 z-[100] hidden items-center justify-center modal-overlay px-4">
-    <div class="modal-card glass-tac max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-      <div class="bg-[var(--accent-red)]/10 border-b border-[var(--line-default)] px-5 py-3 flex items-center justify-between">
+    <div class="modal-card glass-tac max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="bg-[rgba(200,54,44,.18)] border-b border-[var(--line-default)] px-5 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <i data-lucide="alert-circle" class="w-5 h-5 text-[var(--accent-red-soft)]"></i>
+          <i data-lucide="alert-circle" class="w-5 h-5 text-[var(--crimson-bright)]"></i>
           <div>
-            <div class="text-[var(--text-primary)] text-[.65rem] uppercase tracking-wider">Protocolo Ω</div>
-            <h3 class="font-display text-lg text-white">Retaliação Rápida</h3>
+            <div class="text-[var(--crimson-bright)] text-[.65rem] uppercase tracking-widest font-military">Protocolo Ω</div>
+            <h3 class="font-ceremonial text-lg text-white">Retaliação Rápida · Arsenal de Tréplica</h3>
           </div>
         </div>
         <button class="text-[var(--text-secondary)] hover:text-white text-2xl leading-none" id="closeRedModal">×</button>
       </div>
       <div class="p-5 sm:p-6">
         <p class="text-[var(--text-secondary)] text-sm mb-4">
-          Selecione uma fala-modelo calibrada para a contingência ativa:
+          Selecione uma fala-modelo calibrada para a contingência ativa. O Sistema Ω dispara crise cerimonial + áudio monástico.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <button data-red-kind="procedural" class="tac-card p-4 text-left">
-            <i data-lucide="gavel" class="w-5 h-5 text-[var(--text-tertiary)] mb-2"></i>
-            <div class="font-medium text-white">Questão de Ordem</div>
-            <p class="text-xs text-[var(--text-secondary)] mt-1">"Excelência, qual o Art. X que fundamenta?"</p>
-          </button>
-          <button data-red-kind="evidence" class="tac-card p-4 text-left">
-            <i data-lucide="file-warning" class="w-5 h-5 text-[var(--text-tertiary)] mb-2"></i>
-            <div class="font-medium text-white">Exigir Provas</div>
-            <p class="text-xs text-[var(--text-secondary)] mt-1">Pedir fontes rastreáveis.</p>
-          </button>
-          <button data-red-kind="competence" class="tac-card p-4 text-left">
-            <i data-lucide="building-2" class="w-5 h-5 text-[var(--text-tertiary)] mb-2"></i>
-            <div class="font-medium text-white">Objeção de Competência</div>
-            <p class="text-xs text-[var(--text-secondary)] mt-1">Direcionar ao UNSC.</p>
-          </button>
-          <button data-red-kind="sovereignty" class="tac-card p-4 text-left">
-            <i data-lucide="shield-check" class="w-5 h-5 text-[var(--text-tertiary)] mb-2"></i>
-            <div class="font-medium text-white">Apex Soberania</div>
-            <p class="text-xs text-[var(--text-secondary)] mt-1">Rejeitar tutelas morais.</p>
-          </button>
-        </div>
-        <div id="redResult" class="hidden glass-tac mt-5 p-4 border-l-2 border-[var(--accent-gold)]">
+
+        <!-- Filtros por categoria -->
+        <div id="redFilters" class="flex flex-wrap gap-1.5 mb-4"></div>
+
+        <!-- Grid de frases -->
+        <div id="redGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+        <div id="redResult" class="hidden mt-5 p-4 rounded border-l-[3px]" style="border-color:var(--crimson-bright);background:rgba(200,54,44,.06)">
           <div class="flex items-center gap-2 mb-2">
-            <i data-lucide="quote" class="w-4 h-4 text-[var(--accent-gold-soft)]"></i>
-            <span class="text-[var(--accent-gold-soft)] text-[.65rem] uppercase tracking-wider">Pronto para Tréplica</span>
+            <i data-lucide="quote" class="w-4 h-4 text-[var(--crimson-bright)]"></i>
+            <span class="text-[var(--crimson-bright)] text-[.65rem] uppercase tracking-widest font-military">Pronto para Tréplica</span>
           </div>
-          <p id="redSpeech" class="text-[var(--text-secondary)] text-base leading-relaxed"></p>
+          <p id="redSpeech" class="text-white text-base leading-relaxed font-display"></p>
           <div class="flex gap-2 mt-3">
             <button class="btn btn-ghost text-xs" id="copyRed"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar</button>
-            <button class="btn btn-tac text-xs" id="pinRed"><i data-lucide="bookmark" class="w-3.5 h-3.5"></i> Fixar</button>
+            <button class="btn btn-tac text-xs" id="pinRed"><i data-lucide="bookmark" class="w-3.5 h-3.5"></i> Fixar no Painel</button>
           </div>
         </div>
       </div>
@@ -793,6 +895,7 @@
 
   <!-- FX -->
   <canvas id="bgCanvas"></canvas>
+  <canvas id="dustCanvas"></canvas>
   <div class="fx-cursor" id="fxCursor" aria-hidden="true"></div>
   <div class="fx-cursor-dot" id="fxCursorDot" aria-hidden="true"></div>
 

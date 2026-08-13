@@ -1,38 +1,203 @@
 /* ============================================================
-   fx.css — FX layer: WebGL canvas, cursor, ghost text, ticker, seal spin, figure-frame animations, reduced-motion
-   КРЕМЛЬ · Imperial Byzantine Design System v2.0
+   fx.css — FX: WebGL dourado, cursor ritual, particles, vinhetas
+   КРЕМЛЬ · Imperial Ritus v3.0
    ============================================================ */
-#bgCanvas{ position:fixed; inset:0; z-index:0; pointer-events:none; width:100vw; height:100vh; opacity:0; transition:opacity 1.6s ease; }
+
+/* ============================================================
+   CANVAS — plasma dourado ceremonial
+   ============================================================ */
+#bgCanvas{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  width:100vw; height:100vh;
+  opacity:0; transition:opacity 2s ease;
+}
 #bgCanvas.ready{ opacity:1; }
 
-/* Selo imperial giratório */
-.seal{ position:relative; width:120px; height:120px; display:flex; align-items:center; justify-content:center; }
-.seal-ring{ position:absolute; inset:0; animation: sealSpin 38s linear infinite; }
-.seal-portrait{ position:relative; z-index:1; width:88px; height:88px; border-radius:50%; overflow:hidden; border:1.5px solid #4A86D6; box-shadow:0 0 0 3px rgba(10,10,12,.95), 0 6px 18px rgba(0,0,0,.55); }
-.seal-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center 18%; filter:grayscale(.12) contrast(1.05) brightness(1.02); }
-.seal-portrait--fail{ background:radial-gradient(circle at 50% 35%, rgba(74,134,214,.25), rgba(20,20,24,.92)); }
+/* Canvas de partículas de pó dourado (2D, separado) */
+#dustCanvas{
+  position:fixed; inset:0; z-index:2; pointer-events:none;
+  width:100vw; height:100vh;
+  opacity:0; transition:opacity 2.2s ease;
+}
+#dustCanvas.ready{ opacity:.9; }
+
+/* ============================================================
+   SELO IMPERIAL GIRATÓRIO — wireframe ritual
+   ============================================================ */
+.seal{
+  position:relative; width:128px; height:128px;
+  display:flex; align-items:center; justify-content:center;
+}
+.seal-ring{
+  position:absolute; inset:0;
+  animation: sealSpin 42s linear infinite;
+}
+.seal-portrait{
+  position:relative; z-index:1;
+  width:96px; height:96px; border-radius:50%; overflow:hidden;
+  border:1.5px solid var(--gold);
+  box-shadow:
+    0 0 0 3px var(--bg-primary),
+    0 6px 18px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(0,0,0,.5);
+  position:relative;
+}
+.seal-portrait::after{
+  content:""; position:absolute; inset:-4px;
+  border-radius:50%;
+  border:1px solid rgba(201,162,74,.25);
+  pointer-events:none;
+}
+.seal-portrait img{
+  width:100%; height:100%; object-fit:cover; object-position:center 18%;
+  filter:grayscale(.25) sepia(.22) contrast(1.06) brightness(.98);
+}
+.seal-portrait--fail{
+  background: radial-gradient(circle at 50% 35%, rgba(201,162,74,.28), rgba(17,15,13,.95));
+}
 @keyframes sealSpin{ to{ transform:rotate(360deg); } }
 
-.fx-cursor{ position:fixed; top:0; left:0; z-index:9998; pointer-events:none; border-radius:50%; border:1px solid rgba(0,57,166,.6); width:28px; height:28px; mix-blend-mode:screen; transition:width .2s ease,height .2s ease,border-color .2s ease,background .2s ease; }
-.fx-cursor-dot{ position:fixed; top:0; left:0; z-index:9998; pointer-events:none; width:5px; height:5px; border-radius:50%; background:#D52B1E; box-shadow:0 0 8px rgba(213,43,30,.8); }
-.fx-cursor.active{ width:52px; height:52px; border-color:rgba(213,43,30,.9); background:rgba(213,43,30,.06); }
-@media (hover:none){ .fx-cursor,.fx-cursor-dot{ display:none; } }
+/* ============================================================
+   CURSOR RITUAL — anel dourado + dot carmesim
+   ============================================================ */
+.fx-cursor{
+  position:fixed; top:0; left:0; z-index:9998; pointer-events:none;
+  border-radius:50%;
+  border:1px solid rgba(201,162,74,.55);
+  width:30px; height:30px;
+  mix-blend-mode:screen;
+  transition:
+    width .22s ease, height .22s ease,
+    border-color .22s ease, background .22s ease,
+    box-shadow .22s ease;
+}
+.fx-cursor-dot{
+  position:fixed; top:0; left:0; z-index:9998; pointer-events:none;
+  width:5px; height:5px; border-radius:50%;
+  background: var(--crimson-bright);
+  box-shadow: 0 0 10px rgba(200,54,44,.85);
+  mix-blend-mode:screen;
+}
+.fx-cursor.active{
+  width:56px; height:56px;
+  border-color: var(--crimson-bright);
+  background: radial-gradient(circle, rgba(200,54,44,.10), transparent 65%);
+  box-shadow: 0 0 22px rgba(200,54,44,.45);
+}
+/* Trail — removido (efeito desativado) */
+@media (hover:none){ .fx-cursor, .fx-cursor-dot{ display:none; } }
 
-.fx-ghost{ position:absolute; right:-3vw; bottom:-7vh; z-index:0; font-family:'Playfair Display',serif; font-weight:800; font-size:clamp(7rem,20vw,18rem); line-height:.8; letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.06); pointer-events:none; user-select:none; white-space:nowrap; }
+/* ============================================================
+   GHOST TEXT — marca d'água tipográfica
+   ============================================================ */
+.fx-ghost{
+  position:absolute; right:-3vw; bottom:-7vh; z-index:0;
+  font-family: var(--font-ceremonial); font-weight:700;
+  font-size:clamp(7rem,20vw,18rem);
+  line-height:.8; letter-spacing:-.04em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(244,216,138,.06);
+  pointer-events:none; user-select:none; white-space:nowrap;
+}
 
-.fx-ticker{ position:relative; overflow:hidden; border-bottom:1px solid var(--line-default); background:linear-gradient(180deg,rgba(16,16,20,.92),rgba(10,10,12,.92)); }
-.fx-ticker-track{ display:inline-flex; white-space:nowrap; will-change:transform; animation: ticker 75s linear infinite; }
-.fx-ticker-track span{ display:inline-flex; align-items:center; gap:.7rem; padding:.5rem 0; font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.16em; color:#6B8DD6; text-transform:uppercase; }
-.fx-ticker-track span i{ color:#D52B1E; font-style:normal; }
-.fx-ticker-track span b{ color:#FFFFFF; font-weight:600; }
+/* ============================================================
+   TICKER — éditos imperiais
+   ============================================================ */
+.fx-ticker{
+  position:relative; overflow:hidden;
+  border-bottom:1px solid var(--line-focus);
+  border-top:1px solid var(--line-focus);
+  background: linear-gradient(180deg,rgba(17,15,13,.94),rgba(10,9,8,.94));
+  box-shadow: inset 0 1px 0 rgba(201,162,74,.08), inset 0 -1px 0 rgba(0,0,0,.5);
+}
+.fx-ticker-track{
+  display:inline-flex; white-space:nowrap; will-change:transform;
+  animation: ticker 78s linear infinite;
+}
+.fx-ticker-track span{
+  display:inline-flex; align-items:center; gap:.7rem;
+  padding:.55rem 0;
+  font-family: var(--font-military); font-size:.66rem;
+  letter-spacing:.2em; color: var(--gold-soft); text-transform:uppercase;
+}
+.fx-ticker-track span i{
+  color: var(--crimson-bright); font-style:normal; font-size:.9rem;
+  text-shadow: 0 0 6px rgba(200,54,44,.5);
+}
+.fx-ticker-track span b{
+  color: var(--gold-bright); font-weight:600;
+  text-shadow: 0 0 8px rgba(244,216,138,.4);
+}
 .fx-ticker:hover .fx-ticker-track{ animation-play-state:paused; }
 @keyframes ticker{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* Figure-frame animations (login gallery) */
+/* ============================================================
+   FIGURE FRAME (login) — reduced motion
+   ============================================================ */
 @keyframes frameIn{ to{ opacity:1; transform:scale(1) rotate(var(--rot,0deg)) translateY(0); } }
-@keyframes frameFloat{ 0%,100%{ transform:scale(1) rotate(var(--rot,0deg)) translateY(0);} 50%{ transform:scale(1) rotate(var(--rot,0deg)) translateY(var(--dy,8px)); } }
+@keyframes frameFloat{
+  0%,100%{ transform:scale(1) rotate(var(--rot,0deg)) translateY(0);}
+  50%{ transform:scale(1) rotate(var(--rot,0deg)) translateY(var(--dy,8px)); }
+}
 @media (max-width:1023px){ .figure-gallery{ display:none; } }
-@media (prefers-reduced-motion:reduce){ .figure-frame{ animation:none !important; opacity:1; transform:rotate(var(--rot,0deg)); } }
+@media (prefers-reduced-motion:reduce){
+  .figure-frame{ animation:none !important; opacity:1; transform:rotate(var(--rot,0deg)); }
+}
+@media (prefers-reduced-motion: reduce){
+  .seal-ring, .fx-ticker-track, .module-sigil::before{ animation:none; }
+  #bgCanvas, #dustCanvas{ opacity:0 !important; display:none; }
+}
 
-/* prefers-reduced-motion overrides for seal + ticker */
-@media (prefers-reduced-motion: reduce){ .seal-ring{ animation:none; } .fx-ticker-track{ animation:none; } }
+/* ============================================================
+   VINHETA DE TRANSIÇÃO — entre seções
+   ============================================================ */
+.section-vignette{
+  position:fixed; inset:0; z-index:250; pointer-events:none;
+  background:
+    radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(0,0,0,.85) 80%, #000 100%),
+    linear-gradient(180deg, rgba(201,162,74,.18), transparent 50%, rgba(122,20,20,.15));
+  opacity:0;
+  transition: opacity .42s ease;
+}
+.section-vignette.active{
+  opacity:1;
+  pointer-events:auto;
+}
+.section-vignette::before{
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 50%, rgba(201,162,74,.35) 0%, transparent 18%);
+  opacity:0; transition: opacity .3s ease .15s;
+}
+.section-vignette.active::before{ opacity:1; animation: vignettePulse 1s ease forwards; }
+@keyframes vignettePulse{
+  0%{ opacity:0; transform:scale(.5); }
+  60%{ opacity:1; }
+  100%{ opacity:0; transform:scale(2.5); }
+}
+
+/* ============================================================
+   RITUAL DE ENTRADA — glyphs desativados
+   ============================================================ */
+/* .ritual-glyph / .ritual-glyph.fly / @keyframes glyphFly
+   removidos — efeito de sigilos seguindo o mouse desativado */
+
+/* ============================================================
+   CRISIS OVERLAY — saturação carmesim no Protocolo Ω
+   ============================================================ */
+.crisis-overlay{
+  position:fixed; inset:0; z-index:240; pointer-events:none;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(74,15,15,.85) 70%, rgba(74,15,15,.96) 100%);
+  opacity:0;
+  mix-blend-mode: multiply;
+  transition: opacity .35s ease;
+}
+.crisis-overlay.active{ opacity:1; }
+.crisis-overlay::after{
+  content:""; position:absolute; inset:0;
+  background: repeating-linear-gradient(0deg, rgba(122,20,20,.18) 0 2px, transparent 2px 5px);
+  animation: crisisScan .8s steps(3) infinite;
+}
+@keyframes crisisScan{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(5px); }
+}

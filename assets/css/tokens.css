@@ -1,42 +1,162 @@
 /* ============================================================
-   tokens.css — Design tokens: color palette, spacing, radii, shadows, gradients
-   КРЕМЛЬ · Imperial Byzantine Design System v2.0
+   tokens.css — Design tokens: cera, sangue, ouro envelhecido
+   КРЕМЛЬ · Imperial Ritus v3.0
+   "O que é selado com sangue, permanece."
    ============================================================ */
 :root{
-  /* Fundo — ônix quente */
-  --bg-primary:     #0A0A0C;
-  --bg-secondary:   #101013;
-  --bg-tertiary:    #16161B;
-  --bg-elevated:    #1D1D23;
-  /* Linhas — quentes */
-  --line-subtle:    #1C1C22;
-  --line-default:   #2A2A31;
-  --line-focus:     #4A3F2A;
-  /* Texto — marfim */
-  --text-primary:   #F4ECD8;
-  --text-secondary: #B6AE9E;
-  --text-tertiary:  #7A7466;
-  --text-muted:     #494540;
-  /* Ouro imperial — acento PRIMÁRIO */
-  --accent-gold:        #4A86D6;
-  --accent-gold-soft:   #A9C6EE;
-  --accent-gold-bright: #D6E4F7;
-  /* Selo carmesim — ataque / alerta */
-  --accent-red:        #8B1E1E;
-  --accent-red-soft:   #C04A4A;
-  --accent-crimson:    #8B1E1E;
-  /* Legado (referenciado em markup/JS como "azul") → remapeado para azul-bandeira */
-  --accent-blue:       #4A86D6;
-  --accent-blue-soft:  #A9C6EE;
-  /* Verde imperial discreto */
-  --accent-green:      #6E8F4E;
-  /* Semantics */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
-  --shadow-md: 0 6px 18px rgba(0,0,0,.42);
-  --shadow-lg: 0 18px 42px rgba(0,0,0,.48);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --gold-grad: linear-gradient(135deg,#1E4FA8 0%, #4A86D6 35%, #A9C6EE 55%, #4A86D6 70%, #163A7E 100%);
-  --gold-line: linear-gradient(90deg, transparent, rgba(74,134,214,.55), transparent);
+  /* ============================================================
+     TINTAS — pergaminho envelhecido, sangue, noite selada
+     ============================================================ */
+  --bg-primary:     #0A0908;   /* tinta de corvo sobre couro */
+  --bg-secondary:   #110F0D;   /* pergaminho queimado */
+  --bg-tertiary:    #1A1612;   /* madeira de carvalho escuro */
+  --bg-elevated:    #221D17;   /* bronze envelhecido */
+  --bg-vellum:      #1F1A14;   /* superfície de tinta sobre velino */
+
+  /* ============================================================
+     LINHAS — filigranas de ouro, sutis como gravações a buril
+     ============================================================ */
+  --line-subtle:    #1E1A14;
+  --line-default:   #2B251D;
+  --line-focus:     #4A3D24;
+  --line-gold:      #6B5328;   /* contorno de gravura dourada */
+
+  /* ============================================================
+     TEXTO — marfim antigo, tinta ferruginosa
+     ============================================================ */
+  --text-primary:   #F4E8C8;   /* marfim de ícone bizantino */
+  --text-secondary: #C9B89A;   /* tinta ferruginosa clara */
+  --text-tertiary:  #8B7E66;   /* sombra de tinta seca */
+  --text-muted:     #4A4338;   /* carvão apagado */
+
+  /* ============================================================
+     OURO — envelhecido, litúrgico, com reflexos
+     O acento PRIMÁRIO — substitui o antigo "dourado = azul"
+     ============================================================ */
+  --gold-deep:        #6B5328;   /* ouro antigo em repouso */
+  --gold:             #C9A24A;   /* ouro imperial queimado */
+  --gold-soft:        #E8C76E;   /* ouro litúrgico */
+  --gold-bright:      #F4D88A;   /* ouro sob incenso */
+  --gold-shadow:      #8B6F2E;   /* ouro oxidado */
+  --gold-text:        #1A1208;   /* texto sobre fundo dourado */
+
+  /* ============================================================
+     CARMESIM — sangue de mártir, lacre de cera
+     ============================================================ */
+  --crimson-deep:     #4A0F0F;   /* sangue seco */
+  --crimson:          #7A1414;   /* carmesim imperial */
+  --crimson-soft:     #A02424;   /* lacre de cera partido */
+  --crimson-bright:   #C8362C;   /* sangue vivo */
+  --crimson-text:     #FFE8D8;   /* texto sobre carmesim */
+
+  /* ============================================================
+     VIOLETA RITUAL — acento oculto, segredo, alquimia
+     ============================================================ */
+  --violet-deep:      #1F0F2A;   /* noite de monastério */
+  --violet:           #3D1E5E;   /* ametista escuro */
+  --violet-soft:      #6B3F8E;   /* incenso queimado */
+
+  /* ============================================================
+     LEGADO — variáveis "blue" preservadas para retrocompatibilidade
+     com markup/JS já existente (remapeadas para dourado)
+     ============================================================ */
+  --accent-gold:        var(--gold);
+  --accent-gold-soft:   var(--gold-soft);
+  --accent-gold-bright: var(--gold-bright);
+  --accent-red:         var(--crimson);
+  --accent-red-soft:    var(--crimson-soft);
+  --accent-blue:        var(--gold);
+  --accent-blue-soft:   var(--gold-soft);
+
+  /* ============================================================
+     SEMÂNTICA — brasa, brasido, cinzas
+     ============================================================ */
+  --accent-green:      #6E8F4E;   /* verde esmeralda de ícone */
+  --accent-amber:      #C97A1E;   /* brasa de incenso */
+
+  /* ============================================================
+     GLOWS — halos rituais
+     ============================================================ */
+  --glow-gold-soft:   0 0 24px rgba(201,162,74,.18);
+  --glow-gold:        0 0 32px rgba(232,199,110,.35);
+  --glow-gold-strong: 0 0 48px rgba(244,216,138,.55);
+  --glow-crimson:     0 0 28px rgba(160,36,36,.45);
+  --glow-crimson-strong: 0 0 56px rgba(200,54,44,.65);
+
+  /* ============================================================
+     SOMBRAS — gravura em baixo-relevo
+     ============================================================ */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,.55);
+  --shadow-md:  0 6px 18px rgba(0,0,0,.62);
+  --shadow-lg:  0 18px 42px rgba(0,0,0,.72);
+  --shadow-inset: inset 0 1px 0 rgba(232,199,110,.10), inset 0 -1px 0 rgba(0,0,0,.55);
+  --shadow-relief: 0 1px 0 rgba(232,199,110,.18), 0 2px 8px rgba(0,0,0,.55);
+
+  /* ============================================================
+     RADII — geometria sacra
+     ============================================================ */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ============================================================
+     GRADIENTES — litúrgicos
+     ============================================================ */
+  --gold-grad: linear-gradient(135deg,
+    #6B5328 0%,
+    #C9A24A 28%,
+    #F4D88A 50%,
+    #C9A24A 72%,
+    #6B5328 100%);
+  --gold-grad-soft: linear-gradient(135deg,
+    rgba(201,162,74,.15) 0%,
+    rgba(244,216,138,.28) 50%,
+    rgba(201,162,74,.15) 100%);
+  --gold-line: linear-gradient(90deg,
+    transparent,
+    rgba(201,162,74,.55) 20%,
+    rgba(232,199,110,.75) 50%,
+    rgba(201,162,74,.55) 80%,
+    transparent);
+  --crimson-grad: linear-gradient(135deg,
+    #4A0F0F 0%,
+    #7A1414 50%,
+    #A02424 100%);
+  --crimson-grad-strong: linear-gradient(135deg,
+    #7A1414 0%,
+    #C8362C 50%,
+    #7A1414 100%);
+  --vignette: radial-gradient(ellipse at center,
+    transparent 30%,
+    rgba(0,0,0,.35) 80%,
+    rgba(0,0,0,.75) 100%);
+  --wax-gradient: linear-gradient(135deg,
+    #C8362C 0%,
+    #A02424 35%,
+    #7A1414 70%,
+    #4A0F0F 100%);
+
+  /* ============================================================
+     TIPOGRAFIA — serifa cerimonial, monástica, courier
+     ============================================================ */
+  --font-ceremonial: 'Cinzel', 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-display:    'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body:       'Cormorant Garamond', 'Inter', serif;
+  --font-mono:       'JetBrains Mono', 'Courier Prime', monospace;
+  --font-military:   'Inter', sans-serif;
+
+  /* ============================================================
+     SOVIÉTICO · CLASSIFICADO — superfície stencil + terminal
+     Tokens dedicados; nunca reutilizar para o chrome imperial.
+     ============================================================ */
+  --sov-stencil-color: #1A1208;             /* tinta preta sobre stencil */
+  --sov-paper:         #E8DCC0;             /* pergaminho envelhecido */
+  --sov-line:          rgba(122, 20, 20, .55); /* linha carmesim "carimbo" */
+  --sov-ink:           #1A1208;             /* tinta preta sobre Soviet */
+  --sov-glitch-cyan:   rgba(110, 167, 178, .7);
+  --sov-glitch-red:    rgba(200, 54, 44, .7);
+  --sov-stamp-rotate:  -8deg;
+  --sov-terminal-bg:   #0F0D0A;             /* CRT profundo */
+  --sov-stencil-yellow: #C9A24A;            /* stencil amarelo-claro */
+  --sov-stencil-ink:    #0A0908;            /* tinta sobre stencil */
 }

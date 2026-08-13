@@ -1,0 +1,419 @@
+/* ============================================================
+   sov.css — Estética Classificada Soviética
+   КРЕМЛЬ · v3.0
+   "Stencil. Carimbo. Terminal. Sob a pele dourada do Império,
+    corre tinta vermelha de uma era que não esquece."
+   ============================================================ */
+
+/* ============================================================
+   CLASSIFICATION BADGES — 4 níveis (padrão .badge existente)
+   Top Secret · Secret · Restricted · Unclassified
+   ============================================================ */
+.badge-topsecret {
+  background: linear-gradient(135deg, #C8362C 0%, #7A1414 50%, #4A0F0F 100%);
+  color: var(--sov-paper);
+  border: 1px solid #C8362C;
+  letter-spacing: .14em;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(200, 54, 44, .55);
+}
+.badge-secret {
+  background: linear-gradient(135deg, #C97A1E 0%, #A04A0F 100%);
+  color: var(--sov-paper);
+  border: 1px solid #C97A1E;
+  letter-spacing: .12em;
+}
+.badge-restricted {
+  background: linear-gradient(135deg, #4A4338 0%, #2B251D 100%);
+  color: var(--sov-paper);
+  border: 1px solid #6B5328;
+  letter-spacing: .12em;
+}
+.badge-unclass {
+  background: rgba(232, 220, 192, .08);
+  color: var(--sov-paper);
+  border: 1px solid rgba(232, 220, 192, .35);
+  letter-spacing: .12em;
+  font-weight: 400;
+}
+
+/* ============================================================
+   .sov-stamp — Selo diagonal carmesim "СЕКРЕТНО / СОВЕРШЕННО
+   СЕКРЕТНО / ДСП / НЕСЕКРЕТНО"
+   ============================================================ */
+.sov-stamp {
+  display: inline-block;
+  padding: .22rem .6rem;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--sov-paper);
+  background: transparent;
+  border: 1.5px solid var(--crimson-bright);
+  border-radius: 2px;
+  text-transform: uppercase;
+  transform: rotate(var(--sov-stamp-rotate));
+  transform-origin: center;
+  box-shadow: 0 0 0 1.5px rgba(200, 54, 44, .18);
+  text-shadow: 0 0 8px rgba(200, 54, 44, .4);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  animation: sovStampIn .42s ease-out both;
+}
+.sov-stamp--topsecret {
+  border-color: var(--crimson-bright);
+  color: var(--crimson-bright);
+  background: rgba(200, 54, 44, .06);
+}
+.sov-stamp--secret {
+  border-color: #C97A1E;
+  color: #E8C76E;
+  background: rgba(201, 122, 30, .05);
+}
+.sov-stamp--restricted {
+  border-color: #6B5328;
+  color: var(--sov-paper);
+  background: rgba(74, 67, 56, .1);
+}
+.sov-stamp--unclass {
+  border-color: rgba(232, 220, 192, .35);
+  color: var(--sov-paper);
+  background: rgba(232, 220, 192, .04);
+}
+.sov-stamp-stack {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@keyframes sovStampIn {
+  from { opacity: 0; transform: rotate(var(--sov-stamp-rotate)) scale(.7); }
+  to   { opacity: 1; transform: rotate(var(--sov-stamp-rotate)) scale(1); }
+}
+
+/* ============================================================
+   .sov-redact — barra preta decorativa sobre texto censurado
+   Não remove informação; só estiliza. Use com <span class="sov-redact">
+   envolvendo o texto a "censurar".
+   ============================================================ */
+.sov-redact {
+  display: inline-block;
+  background: var(--sov-ink);
+  color: transparent;
+  padding: 0 .15em;
+  border-radius: 1px;
+  user-select: none;
+  position: relative;
+}
+.sov-redact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--sov-ink) 0%,
+    #2A1F18 50%,
+    var(--sov-ink) 100%
+  );
+  border-radius: inherit;
+  z-index: 0;
+}
+.sov-redact > * { position: relative; z-index: 1; }
+
+/* Variant: "fita" preta fina — só a barra, sem fundo expansivo */
+.sov-redact--bar {
+  background: var(--sov-ink);
+  color: transparent;
+  padding: .05em .3em;
+}
+
+/* ============================================================
+   .sov-terminal — bloco monoespaçado estilo terminal CRT
+   Para outputs densos: fala-modelo, transcrição, JSON-like.
+   ============================================================ */
+.sov-terminal {
+  background: var(--sov-terminal-bg);
+  border: 1px solid rgba(122, 20, 20, .35);
+  border-left: 3px solid var(--crimson-bright);
+  color: var(--sov-paper);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  line-height: 1.65;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow-x: auto;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    rgba(122, 20, 20, .05) 2px 3px
+  );
+}
+.sov-terminal::before {
+  content: "▲ ▲ ▲  ПРИЁМ";
+  position: absolute;
+  top: .35rem;
+  right: .7rem;
+  font-size: .55rem;
+  letter-spacing: .22em;
+  color: rgba(122, 20, 20, .65);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.sov-terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, .35) 100%
+  );
+  pointer-events: none;
+}
+/* Header de terminal — primeira linha com prompt */
+.sov-terminal-prompt {
+  color: var(--crimson-bright);
+  margin-right: .55em;
+  user-select: none;
+}
+.sov-terminal-cursor {
+  display: inline-block;
+  width: .55em;
+  height: .95em;
+  background: var(--sov-paper);
+  vertical-align: -.05em;
+  margin-left: .15em;
+  animation: sovBlink 1s steps(1) infinite;
+}
+@keyframes sovBlink {
+  50% { opacity: 0; }
+}
+
+/* ============================================================
+   .sov-stencil — tipografia carimbada stencil
+   (Não usa ::before; usa classes utility aplicadas a h*, span, etc.)
+   ============================================================ */
+.sov-stencil {
+  font-family: var(--font-military);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--sov-paper);
+  text-shadow:
+    0 0 1px rgba(232, 220, 192, .3),
+    0 1px 0 rgba(0, 0, 0, .55);
+  user-select: none;
+}
+.sov-stencil--yellow {
+  color: var(--sov-stencil-yellow);
+}
+.sov-stencil--sm { font-size: .65rem; }
+.sov-stencil--md { font-size: .82rem; }
+.sov-stencil--lg { font-size: 1rem; }
+
+/* ============================================================
+   .sov-header — barra de header soviet-style para seções
+   Faixa horizontal com triângulo ▲ + número serial + label
+   ============================================================ */
+.sov-header {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .55rem .9rem;
+  background: linear-gradient(
+    90deg,
+    rgba(74, 15, 15, .35) 0%,
+    rgba(122, 20, 20, .08) 60%,
+    transparent 100%
+  );
+  border-left: 3px solid var(--crimson-bright);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--sov-paper);
+}
+.sov-header__serial {
+  color: var(--crimson-bright);
+  font-weight: 700;
+}
+.sov-header__label {
+  color: var(--sov-paper);
+  opacity: .85;
+}
+
+/* ============================================================
+   .sov-divider — linha divisória estilo "carimbo vermelho"
+   ============================================================ */
+.sov-divider {
+  height: 1px;
+  background: var(--sov-line);
+  position: relative;
+  margin: 1.25rem 0;
+}
+.sov-divider::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  top: -.65rem;
+  color: var(--crimson-bright);
+  font-size: .65rem;
+}
+.sov-divider::after {
+  content: "■";
+  position: absolute;
+  right: 0;
+  top: -.65rem;
+  color: var(--crimson-bright);
+  font-size: .65rem;
+}
+
+/* ============================================================
+   .sov-card — wrapper para conteúdo soviético
+   Overlay sutil de scanline sobre .glass-tac sem perder o chrome
+   ============================================================ */
+.sov-card {
+  position: relative;
+  isolation: isolate;
+}
+.sov-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 3px,
+    rgba(122, 20, 20, .035) 3px 4px
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+.sov-card > * { position: relative; z-index: 1; }
+
+/* ============================================================
+   Acessibilidade — reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .sov-stamp,
+  .sov-terminal-cursor {
+    animation: none;
+  }
+  .sov-stamp { transform: rotate(var(--sov-stamp-rotate)) !important; }
+}
+
+/* ============================================================
+   PROSE-SOV — Tipografia para corpo de documentos
+   Subset controlado: h2, h3, p, ul, ol, li, em, strong
+   ============================================================ */
+.prose-sov h2 {
+  font-family: var(--font-display);
+  color: var(--accent-gold-bright);
+  font-size: 1rem;
+  letter-spacing: .04em;
+  margin-top: 1.25rem;
+  margin-bottom: .65rem;
+  border-left: 2px solid var(--crimson-bright);
+  padding-left: .65rem;
+}
+.prose-sov h3 {
+  font-family: var(--font-display);
+  color: var(--sov-paper);
+  font-size: .9rem;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+.prose-sov p {
+  color: var(--text-secondary);
+  font-size: .85rem;
+  line-height: 1.7;
+  margin-bottom: .8rem;
+}
+.prose-sov ul, .prose-sov ol {
+  color: var(--text-secondary);
+  font-size: .82rem;
+  line-height: 1.7;
+  margin: .5rem 0 .8rem 1.5rem;
+  list-style: none;
+}
+.prose-sov ul li::before { content: "▸ "; color: var(--crimson-bright); margin-left: -.9rem; }
+.prose-sov ol { list-style: decimal; padding-left: .8rem; }
+.prose-sov ol li::marker { color: var(--crimson-bright); font-weight: 700; }
+.prose-sov em {
+  color: var(--sov-paper);
+  font-style: italic;
+}
+.prose-sov strong {
+  color: var(--accent-gold-bright);
+  font-weight: 700;
+}
+.cite-link {
+  color: var(--accent-blue);
+  text-decoration: underline dotted;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: .78em;
+}
+.cite-link:hover {
+  color: var(--accent-gold-bright);
+  text-decoration: underline solid;
+}
+
+/* ============================================================
+   .sov-ticker — Comunicado Urgente contínuo
+   Faixa carmesim com texto deslizante horizontal
+   ============================================================ */
+.sov-ticker {
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(90deg, rgba(74, 15, 15, .6) 0%, rgba(122, 20, 20, .25) 50%, rgba(74, 15, 15, .6) 100%);
+  border: 1px solid var(--crimson-bright);
+  border-left: 3px solid var(--crimson-bright);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--sov-paper);
+}
+.sov-ticker__badge {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .85rem;
+  background: var(--crimson-bright);
+  color: var(--sov-paper);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+.sov-ticker__track {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding: .5rem 1rem;
+}
+.sov-ticker__content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: sovTicker 38s linear infinite;
+}
+.sov-ticker__content > span {
+  margin: 0 1.5rem;
+}
+.sov-ticker__content > span::before {
+  content: "◆";
+  color: var(--crimson-bright);
+  margin-right: .5rem;
+}
+@keyframes sovTicker {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sov-ticker__content { animation: none; transform: none; }
+}

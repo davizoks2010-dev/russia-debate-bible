@@ -25,8 +25,20 @@ export function renderIntelQuickTags() {
 export function bindIntel() {
   const search = document.getElementById('intelSearch');
   const filter = document.getElementById('intelFilter');
-  if (search) search.addEventListener('input', () => { intelQuery = search.value; refresh(); });
-  if (filter) filter.addEventListener('input', () => { intelFilter = filter.value || 'TODOS'; refresh(); });
+  if (search) {
+    let t;
+    search.addEventListener('input', () => {
+      clearTimeout(t);
+      t = setTimeout(() => { intelQuery = search.value; refresh(); }, 200);
+    });
+  }
+  if (filter) {
+    let t;
+    filter.addEventListener('input', () => {
+      clearTimeout(t);
+      t = setTimeout(() => { intelFilter = filter.value || 'TODOS'; refresh(); }, 200);
+    });
+  }
 }
 
 function refresh() {
@@ -60,20 +72,35 @@ function refresh() {
         </div>
       </header>
       <div class="p-4 sm:p-5">
-        <p class="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-3">${c.position}</p>
+        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">${c.position}</p>
         <div class="cls-ribbon my-4"></div>
-        <div class="grid grid-cols-2 gap-2 text-xs">
+        <div class="space-y-3 text-xs">
           <div>
-            <div class="text-[var(--text-tertiary)] uppercase tracking-widest text-[.6rem] mb-1">Cronologia</div>
-            <div class="text-[var(--text-secondary)] line-clamp-2">${c.cronology[0]}</div>
+            <div class="text-[var(--gold-soft)] uppercase tracking-widest text-[.6rem] mb-1.5 font-ceremonial">Cronologia</div>
+            <ul class="space-y-1 text-[var(--text-secondary)] font-mono">
+              ${c.cronology.map((line) => `<li class="leading-relaxed">▸ ${line}</li>`).join('')}
+            </ul>
           </div>
           <div>
-            <div class="text-[var(--text-tertiary)] uppercase tracking-widest text-[.6rem] mb-1">Base Legal</div>
-            <div class="text-[var(--text-secondary)] line-clamp-2">${c.legal[0]}</div>
+            <div class="text-[var(--gold-soft)] uppercase tracking-widest text-[.6rem] mb-1.5 font-ceremonial">Base Legal</div>
+            <ul class="space-y-1 text-[var(--accent-gold-soft)] font-mono">
+              ${c.legal.map((l) => `<li>◆ ${l}</li>`).join('')}
+            </ul>
           </div>
+          <div class="tac-card glass-tac p-3 rounded border-l-[3px] border-l-[var(--gold)]">
+            <div class="text-[var(--gold-soft)] uppercase tracking-widest text-[.6rem] mb-1.5 font-ceremonial">Estatísticas</div>
+            <p class="text-[var(--text-secondary)] text-[.78rem] leading-relaxed">${c.stats}</p>
+          </div>
+          ${c.defenses.slice(0, 2).map((d) => `
+            <div class="tac-card glass-tac p-3 rounded border-l-[3px] border-l-[var(--accent-blue)]">
+              <div class="font-mono text-[.6rem] text-[var(--accent-red-soft)] uppercase tracking-widest">${d.charge}</div>
+              <div class="text-[var(--text-secondary)] text-[.75rem] mt-1">${d.basis}</div>
+              <div class="font-mono text-[var(--accent-gold-bright)] text-[.7rem] mt-1.5 italic">→ ${d.pivot}</div>
+            </div>
+          `).join('')}
         </div>
         <div class="flex flex-wrap gap-1.5 mt-4">
-          ${c.tags.slice(0,4).map((t) => `<span class="badge badge-slate">${t}</span>`).join('')}
+          ${c.tags.map((t) => `<span class="badge badge-slate">${t}</span>`).join('')}
         </div>
         <div class="flex items-center justify-between mt-4 pt-3 border-t border-[var(--line-default)]">
           <span class="text-[var(--text-tertiary)] text-[.65rem] font-mono">${c.defenses.length} DEFESAS · ${c.attacks.length} ATAQUES</span>
@@ -102,10 +129,15 @@ export function openDossier(id) {
 
   const html = `
     <div class="space-y-5 max-h-[75vh] overflow-y-auto pr-2">
+      <div class="sov-header mb-3">
+        <span class="sov-header__serial">▲ КРЕМЛЬ-АΩ-2026 / D-${c.id.toUpperCase()}</span>
+        <span class="sov-header__label">${c.region} · ${c.defenses.length} defesas</span>
+        <span class="sov-stamp sov-stamp--secret ml-auto" style="font-size:.55rem">СЕКРЕТНО</span>
+      </div>
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span class="badge badge-blue">${c.region}</span>
-          <span class="font-mono text-[.65rem] text-[var(--text-tertiary)]">D-${c.id.toUpperCase()}</span>
+          <span class="sov-stencil sov-stencil--sm" style="color:var(--crimson-bright)">D-${c.id.toUpperCase()}</span>
         </div>
         <h3 class="font-display text-xl text-white">${c.country} ${c.title}</h3>
       </div>
@@ -135,7 +167,7 @@ export function openDossier(id) {
       </div>
       <div class="tac-card glass-tac p-4 rounded border-l-[3px] border-l-[var(--accent-gold)]">
         <div class="classified text-[var(--accent-gold-soft)] mb-2">Discurso Modelo (60s)</div>
-        <p class="text-[var(--text-primary)] text-sm font-tact leading-relaxed italic">"${c.speech}"</p>
+        <div class="sov-terminal" style="border-left-color:var(--gold);margin:0"><span class="sov-terminal-prompt">$</span>${c.speech}<span class="sov-terminal-cursor"></span></div>
       </div>
       <div class="flex flex-wrap gap-2 justify-end">
         <button class="btn btn-ghost text-xs" data-close><i data-lucide="x" class="w-3 h-3"></i> Fechar</button>

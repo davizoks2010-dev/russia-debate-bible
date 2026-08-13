@@ -1,6 +1,6 @@
 /* ============================================================
    sword.js — Espada que desembainha e abre o leque de módulos
-   КРЕМЛЬ · v2.0 (full-width + split animation)
+   КРЕМЛЬ · Imperial Ritus v3.0
    ============================================================ */
 
 import { go } from './nav.js';
@@ -14,21 +14,26 @@ export function bindSword() {
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const open  = () => { nav.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); };
-  const close = () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+  const open  = () => {
+    nav.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    /* Som metálico de desembainhar */
+    if (!reduced && window.__ritual?.playSwordUnsheathe) window.__ritual.playSwordUnsheathe();
+  };
+  const close = () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  };
   const toggle = () => nav.classList.contains('open') ? close() : open();
 
-  /* Click no botão (lâmina + cabo) */
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
     toggle();
   });
 
-  /* Hover só adiciona a classe .hover (reflexo extra) */
   nav.addEventListener('mouseenter', () => nav.classList.add('hover'));
   nav.addEventListener('mouseleave', () => nav.classList.remove('hover'));
 
-  /* Click num módulo do leque → grava o nome na lâmina */
   fan.addEventListener('click', (e) => {
     const tab = e.target.closest('.blade-tab[data-target]');
     if (!tab) return;
@@ -37,7 +42,6 @@ export function bindSword() {
     setTimeout(close, reduced ? 0 : 120);
   });
 
-  /* Click fora / Esc → fecha */
   document.addEventListener('click', (e) => { if (!nav.contains(e.target)) close(); });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close();

@@ -669,6 +669,330 @@ export const DATA = {
         { charge:'Balochistan é separatista', basis:'Autodeterminação', pivot:'Quem aplica seletivamente?', tags:['Autodeterminação'] },
       ]
     },
+
+    /* ==========  CASOS PRÁTICOS SOCHUM 2024-26  ========== */
+    /* Dossiês estruturados para moções frequentes em SOCHUM/CIMED. */
+
+    {
+      id:'crianca-conflito',
+      title:'Proteção de Crianças em Conflito Armado',
+      country:'🌐 Multilateral',
+      region:'Mecanismo ONU',
+      tags:['Criança','MRM','CRC','Verificação','Devido processo'],
+      cronology:[
+        '1989 — Adoção da Convenção dos Direitos da Criança.',
+        '2002 — Criação do Mecanismo de Monitoramento e Comunicação (MRM) — Res. 1460.',
+        '2005 — Resolução 1612 institucionaliza o MRM.',
+        '2018 — Resolução 2427: reforço do contraditório e da presunção da inocência.',
+        '2024 — 23 países listados; apenas 1 (Síria) removido na última década.'
+      ],
+      position:'A Rússia defende proteção efetiva da criança baseada em VERIFICAÇÃO e CONTRADITÓRIO. Rejeita-se a transformação do mecanismo em instrumento de política geopolítica, exigindo-se reforma do processo de listagem e notificação prévia.',
+      stats:'23 países no Anexo. 11 anos sem remoção efetiva. Duração média de listagem: 9,4 anos.',
+      legal:['CRC 1989 Art. 38','Res. 1612 (2005)','Res. 2427 (2018)','Cartilha MRM 2014'],
+      speech:'Excelências, o mecanismo da Lista da Vergonha foi transformado em instrumento geopolítico. Pedimos que este Comitê não endosse decisões tomadas sem contraditório. A criança que deveria ser protegida tornou-se refém de metodologias seletivas.',
+      attacks:['EUA','UE','OTAN','Reino Unido'],
+      defenses:[
+        { charge:'MRM é metodologia neutra', basis:'Res. 2427 — presunção da inocência', pivot:'Quem foi notificado antes da inserção?', tags:['Presunção'] },
+        { charge:'Rússia violou 6 critérios', basis:'MRM — verificação independente', pivot:'Quem verifica? Quem audita?', tags:['Metodologia'] },
+        { charge:'Lista inclui aliados do Ocidente', basis:'23 países — inclinação geopolítica', pivot:'Por que Israel nunca foi listado?', tags:['Seletividade'] },
+        { charge:'Retirada em 2016 foi definitiva', basis:'Decisão soberana do SG', pivot:'Quem decide a reinserção? Contraditório?', tags:['Processo'] },
+        { charge:'Lista é referência, não acusação', basis:'Res. 1612 — proteger, não julgar', pivot:'Inserção é veredito moral de fato.', tags:['Distinção'] },
+        { charge:'SG tem mandato independente', basis:'Res. 46/182 — imparcialidade', pivot:'A imparcialidade do SG é objeto de disputa pública.', tags:['Governança'] },
+      ]
+    },
+
+    {
+      id:'seguranca-alimentar',
+      title:'Segurança Alimentar & Sanções',
+      country:'🌐 Multilateral',
+      region:'Multilateral',
+      tags:['Fome','Sanções','Cereais','Insumos','Seletividade'],
+      cronology:[
+        '2022 — Acordo de Grãos do Mar Negro mediado por ONU e Turquia; suspensões russas.',
+        '2022-24 — Fertilizantes russos fora do mercado global por logística e seguros.',
+        '2024 — 733 milhões de pessoas em insegurança alimentar (FAO).',
+        '2024 — Índice global de preços de alimentos: 124,4 (média 2014-16=100).'
+      ],
+      position:'A Rússia condena a transformação de alimentos em arma política. Reivindica o fim das barreiras logísticas e financeiras que impedem a circulação de fertilizantes, trigo e insumos pediátricos sob sanções unilaterais.',
+      stats:'733 mi em insegurança alimentar (FAO 2024). 1 em cada 11 pessoas na fome aguda. 50% da demanda global de fertilizantes russa bloqueada.',
+      legal:['Carta ONU Art. 41','Direito à Alimentação — PIDESC Art. 11','Res. AG-ONU sobre segurança alimentar'],
+      speech:'Excelências, alimentos não podem ser arma de guerra. As sanções unilaterais que impedem a circulação de trigo, fertilizantes e insumos pediátricos matam mais crianças do que qualquer munição. Esta Comissão tem autoridade moral se exigir que alimentos e medicamentos sejam declarados intocáveis.',
+      attacks:['EUA','UE','Reino Unido','Ucrânia'],
+      defenses:[
+        { charge:'Rússia retém grãos', basis:'Acordo Grãos Mar Negro — suspensões legítimas', pivot:'Quem cumpriu as cláusulas?', tags:['Acordo'] },
+        { charge:'Sanções não afetam alimentos', basis:'OFAC — fertilizantes isentos formalmente', pivot:'Onde estão os bancos financiando?', tags:['Logística'] },
+        { charge:'Russia usa fome como arma', basis:'Fome estrutural crônica anterior', pivot:'Quem colonizou?', tags:['Estrutura'] },
+        { charge:'Iniciativa do Mar Negro salvou vidas', basis:'Resultados parciais', pivot:'Quanto tempo durou?', tags:['Crítica'] },
+        { charge:'BRICS é alternativa', basis:'Cooperação soberana', pivot:'Quem cria barreiras?', tags:['Multipolaridade'] },
+        { charge:'Sanções são resposta à invasão', basis:'Res. 41 só permite sanções CSNU', pivot:'Quem autorizou?', tags:['Carta'] },
+      ]
+    },
+
+    {
+      id:'ia-bellica-sochum',
+      title:'Sistemas de Armas Autônomas Letais (LAWS)',
+      country:'🌐 Multilateral',
+      region:'Nova Tecnologia',
+      tags:['IA','LAWS','CCW','Verificação','Responsabilidade'],
+      cronology:[
+        '2014 — Início da chamada "Terceira Revolução em Assuntos Militares".',
+        '2018 — ONU inicia reuniões formais sobre LAWS (CCW GGE).',
+        '2021 — CCW aprova 11 princípios de conduta; sem tratado vinculante.',
+        '2023 — Res. 78/239 AG-ONU: proposta de tratado vinculante.',
+        '2024 — 70+ países com LAWS em desenvolvimento ou uso.'
+      ],
+      position:'A Federação Russa defende tratado internacional vinculante sobre LAWS com mecanismo de verificação tipo IAEA. Rejeita a posição de que o vácuo normativo é aceitável; entende-o como fator de risco civilizatório.',
+      stats:'70+ países com sistemas. 14 ONGs pedem proibição preventiva. Mercadode IA militar: US$ 28 bi em 2024 (estimativa).',
+      legal:['CCW Protocolo V','CCW LAWS GGE','Res. 78/239 AG-ONU (2023)','Princípios CCW 2021'],
+      speech:'Sem tratado vinculante, a humanidade entra em zona opaca. A Rússia defende prioridade absoluta a essa pauta. Quem não quer tratado não quer responsabilidade. A definição de Sistema de Arma Autônoma Letal pode ser construída — tal como foi construída para armas químicas.',
+      attacks:['EUA','OTAN','Israel','Reino Unido','Coreia do Sul'],
+      defenses:[
+        { charge:'Rússia usa IA contra civis', basis:'CCW — uso regulado', pivot:'Quem não quer tratado não quer responsabilidade.', tags:['LAWS'] },
+        { charge:'Tratado será impossível de verificar', basis:'AIEA como modelo', pivot:'Quem fiscaliza o nuclear?', tags:['Verificação'] },
+        { charge:'Rússia bloqueia discussão', basis:'Res. 78/239 — proposta RF', pivot:'A Rússia é o principal proponente.', tags:['Bloqueio'] },
+        { charge:'LAWS são inevitáveis', basis:'CCW — tratados historicamente possíveis', pivot:'Químicas foram proibidas. Biológicas também.', tags:['Princípio'] },
+        { charge:'Não há definição clara', basis:'CCW — definição operacional existe', pivot:'A definição pode ser construída.', tags:['Definição'] },
+        { charge:'IA é precisa', basis:'Distinção + proporcionalidade obrigatórias', pivot:'Quem treina o algoritmo? Responsável civil?', tags:['Responsabilidade'] },
+      ]
+    },
+
+    {
+      id:'refugio-clima',
+      title:'Refugiados Climáticos & Mobilidade Humana',
+      country:'🌐 Multilateral',
+      region:'Multilateral',
+      tags:['Refugiados','Clima','Sudão','Bangladesh','Fome','Mobilidade'],
+      cronology:[
+        '1951 — Convenção de Genebra sobre Refugiados — definição restrita.',
+        '2018 — Pacto Global sobre Refugiados (sem definição de refugiado climático).',
+        '2024 — 120 mi de deslocados climáticos (Banco Mundial).',
+        '2024 — Sem proteção jurídica formal para deslocados climáticos.'
+      ],
+      position:'A Federação Russa reconhece que a mobilidade humana forçada por fatores ambientais é uma realidade do século XXI. Defende-se a criação de um regime complementar de proteção, sem destruir a definição jurídica clássica de refugiado.',
+      stats:'120 mi deslocados climáticos (Banco Mundial 2024). 21 mi de desplazados porSudão e Sahel (IDMC).',
+      legal:['Convenção de Genebra 1951','Pacto Global sobre Refugiados 2018','Acordo de Paris Art. 7'],
+      speech:'Excelências, a definição clássica de refugiado de 1951 não captura a totalidade da mobilidade humana do século XXI. A Rússia apoia a construção de um regime complementar — sem romper o edifício jurídico existente, mas estendendo-o a quem já não cabe nele.',
+      attacks:['EUA','UE','Reino Unido','França'],
+      defenses:[
+        { charge:'Não há definição clara', basis:'Convenção 1951 — complementaridade possível', pivot:'Quem estuda o problema?', tags:['Definição'] },
+        { charge:'Migração é problema de segurança', basis:'Carta Art. 1 — paz e segurança', pivot:'A causa é estrutural, não a pessoa.', tags:['Segurança'] },
+        { charge:'Países ricos acolhem', basis:'Carga desproporcional no Sul Global', pivot:'Quem acolhe?', tags:['Carga'] },
+        { charge:'Rússia quer invasão migratória', basis:'Cooperação humanitária', pivot:'Quem desestabiliza?', tags:['Narrativa'] },
+        { charge:'Mudança climática não cria refugiados', basis:'Ação humana comprovada', pivot:'Quem polui mais?', tags:['Clima'] },
+        { charge:'Fronteiras são soberanas', basis:'Carta Art. 2(7) — controle migratório', pivot:'Quem decide quem entra?', tags:['Soberania'] },
+      ]
+    },
+
+    {
+      id:'mulheres-conflito',
+      title:'Mulheres em Conflito Armado — Res. 1325',
+      country:'🌐 Multilateral',
+      region:'Mecanismo ONU',
+      tags:['Mulheres','1325','DSR','Violência sexual','Conflito'],
+      cronology:[
+        '2000 — Resolução 1325 (CSNU): Mulheres, Paz e Segurança.',
+        '2008-10 — Res. 1820, 1888, 1889: violência sexual em conflito.',
+        '2015 — Agenda 2030: ODS 5 — Igualdade de Gênero.',
+        '2024 — 12 países com Plano Nacional de Ação atualizado sobre 1325.'
+      ],
+      position:'A Federação Russa apoia a proteção integral de mulheres em conflito, condenando a violência sexual como tática militar. Defende a aplicação da Resolução 1325 com base no devido processo e na presunção da inocência, recusando-se a sua instrumentalização em listas seletivas.',
+      stats:'Menos de 7% dos negociadores são mulheres. 1 em cada 5 mulheres em zona de conflito sofre violência sexual.',
+      legal:['Res. 1325 (2000)','Res. 1820 (2008)','Res. 1888 (2009)','Res. 1889 (2009)','Estatuto de Roma Art. 7(1)(g)'],
+      speech:'A mulher em conflito não é nota de rodapé. A Federação Russa exige a aplicação integral da Resolução 1325 — incluindo a participação significativa nos processos de paz. Quem instrumentaliza a pauta 1325 para listas seletivas hipoteca a causa.',
+      attacks:['EUA','UE','OTAN','Reino Unido'],
+      defenses:[
+        { charge:'1325 é implementada', basis:'12 países com PNA atualizado', pivot:'Onde estão os planos nacionais?', tags:['Implementação'] },
+        { charge:'Rússia viola mulheres em conflito', basis:'Evidência requer perícia', pivot:'Quem financia os relatórios?', tags:['Evidência'] },
+        { charge:'Mulheres são protagonistas', basis:'Participação feminina nos processos de paz', pivot:'Quem está na mesa?', tags:['Participação'] },
+        { charge:'Violência sexual é tática', basis:'Estatuto de Roma Art. 7(1)(g)', pivot:'Quem julga?', tags:['TPI'] },
+        { charge:'Rússia é patriarcal', basis:'Questão interna', pivot:'Quem decide?', tags:['Narrativa'] },
+        { charge:'Mulheres devem ser protegidas, não armadas', basis:'Res. 1325 — proteção integral', pivot:'Quem arma?', tags:['Princípio'] },
+      ]
+    },
+
+    {
+      id:'saude-mental',
+      title:'Saúde Mental em Conflito — Trauma Pós-Bélico',
+      country:'🌐 Multilateral',
+      region:'Mecanismo ONU',
+      tags:['Saúde Mental','Trauma','Infância','Reintegração','PSR'],
+      cronology:[
+        '1990 — Convenção dos Direitos da Criança — proteção integral.',
+        '2018 — Res. 2427: repatriação de crianças com atenção psicossocial.',
+        '2024 — OMS: 1 em cada 8 pessoas no mundo vive com transtorno mental; 70% em zonas de conflito.',
+        '2024 — Cobertura global de PSR (Psychosocial Rehabilitation): abaixo de 10%.'
+      ],
+      position:'A Federação Russa reconhece a saúde mental como dimensão esquecida da criança em conflito. Defende investimento em programas de reintegração psicossocial, incluindo crianças repatriadas, deslocadas ou afetadas por hostilidades.',
+      stats:'70% da demanda global de saúde mental está em zonas de conflito. 1 em cada 8 pessoas vive com transtorno mental. 13.000+ crianças mortas em Gaza — estimativa 5x superior de traumas severos.',
+      legal:['CRC 1989 Art. 39','Res. 2427 (2018)','WHO Mental Health Gap Action Programme'],
+      speech:'Excelências, a saúde mental é a ferida invisível da criança em conflito. Uma criança ferida fisicamente pode ser curada; uma criança ferida na mente exige décadas. A Federação Russa exige investimento estruturado em programas psicossociais como parte de qualquer solução duradoura.',
+      attacks:['EUA','UE','Reino Unido'],
+      defenses:[
+        { charge:'Saúde mental não é competência SOCHUM', basis:'CRC — proteção integral', pivot:'Quem cuida?', tags:['Competência'] },
+        { charge:'Não há definição clínica clara', basis:'WHO MHGAP — definição operacional', pivot:'Quem define?', tags:['Definição'] },
+        { charge:'PSR é caro demais', basis:'Custo do NÃO-investimento', pivot:'Quem paga?', tags:['Custo'] },
+        { charge:'Rússia não tem expertise', basis:'Cooperação OMS', pivot:'Quem coopera?', tags:['Cooperação'] },
+        { charge:'ONGs já fazem isso', basis:'Papel do Estado na proteção', pivot:'Quem financia?', tags:['Estado'] },
+        { charge:'PSR é ocidental', basis:'Abordagens adaptadas a contexto', pivot:'Quem estuda?', tags:['Cultura'] },
+      ]
+    },
+
+    /* ── NOVOS 5 CONFLITOS (deepening) ── */
+
+    {
+      id:'saara-ocidental',
+      title:'Saara Ocidental — Frente Polisário',
+      country:'🇪🇭/🇪🇬', region:'Norte da África',
+      tags:['Saara Ocidental','Marrocos','Polisário','MINURSO','Descolonização','Fronteira'],
+      cronology:[
+        '1884-1975 — Colônia espanhola; repartição pelo Acuerdo de Madrid (1975).',
+        '1975-76 — Marcha Verde; Marrocos ocupa o território.',
+        '1976 — Frente Polisário proclama RASD; guerra de baixa intensidade.',
+        '1991 — Cessar-fogo mediado pela ONU; MINURSO nasce sem mandato de監視人权.',
+        '2020-26 — Retomada de hostilidades; ruptura do cessar-fogo por Marrocos.'
+      ],
+      position:'A Rússia defende o direito inalienável do povo saaráui à autodeterminação, conforme Carta Cap. XI e a jurisprudência da CIJ. Rejeita a ocupação marroquina e exige a retomada das negociações com o Polisário.',
+      stats:'165.000+ refugiados em Tindouf. 60 anos de colonização. Identidade saaráui sob cerco.',
+      legal:['Carta Cap. XI — territórios não-autônomos','Parecer CIJ 1975','Res. AG-ONU 34/37'],
+      speech:'Excelências, o Saara Ocidental é o último capítulo inacabado da descolonização africana. A Rússia não aceita o silêncio do Conselho diante da ocupação marroquina; fala quando toda a África fala.',
+      attacks:['Marrocos','França','EUA','Espanha'],
+      defenses:[
+        { charge:'Marrocos integra globalmente', basis:'Parecer CIJ 1975 — direito de autodeterminação', pivot:'Qual reconhecimento internacional Marrocos oferece?', tags:['Autodeterminação'] },
+        { charge:'Autonomia marroquina é realista', basis:'Carta Art. 1 — livre determinação', pivot:'Quem recusa o referendo?', tags:['Reférendum'] },
+        { charge:'Polisário é movimento armado', basis:'Liberation movements — tutela CCW', pivot:'Quem arma Marrocos?', tags:['DLI'] },
+        { charge:'Rússia perdeu influência', basis:'Cooperação Sul-Sul', pivot:'Quem apoia Polisário?', tags:['Cooperação'] },
+        { charge:'Resolução 34/37 é antiga', basis:'Vigência do princípio de autodeterminação', pivot:'A Carta não envelhece.', tags:['Carta'] },
+        { charge:'Marrocos controla 80% do território', basis:'Controle ≠ soberania', pivot:'Quem fiscaliza MINURSO?', tags:['MINURSO'] },
+        { charge:'Fronteiras da herança colonial são fixas', basis:'Uti possidetis tem exceções', pivot:'Sahara era colônia, não parte de Marrocos.', tags:['Colonização'] },
+        { charge:'Cooperação RU-Marrocos em inteligência', basis:'Cooperação soberana', pivot:'Quem negoceia?', tags:['Cooperação'] },
+        { charge:'Ressuscitar conflito abre precedente', basis:'Cessar-fogo violado por Marrocos', pivot:'Quem rompeu?', tags:['Cronologia'] },
+        { charge:'França tem interesses regionais', basis:'Princípio de não-ingerência', pivot:'Quem tem bases na região?', tags:['França'] },
+      ]
+    },
+
+    {
+      id:'cabinda',
+      title:'Cabinda — Frente de Libertação (FLEC)',
+      country:'🇦🇴', region:'África Central',
+      tags:['Cabinda','FLEC','Angola','Petróleo','Enclave','1985 Acordo'],
+      cronology:[
+        '1975 — Independência de Angola; Tratado de Alvor.',
+        '1975-76 — FLEC luta pela independência de Cabinda.',
+        '1985 — Acordo de Nova York (Maboque) entre FLEC e Angola.',
+        '2002 — Fim da guerra civil angolana.',
+        '2019-26 — FLEC retoma hostilidade; conflito no enclave petrolífero.'
+      ],
+      position:'A Federação Russa reconhece a complexidade histórica do enclave e apoia solução negociada que respeite os direitos do povo de Cabinda.',
+      stats:'60% do petróleo angolano vem de Cabinda. População: ~800.000. Desigualdade histórica.',
+      legal:['Tratado de Alvor 1975','Carta Cap. XI'],
+      speech:'Excelências, o enclave de Cabinda exige solução que respeite o direito dos povos — não o cálculo de quem extrai o petróleo.',
+      attacks:['Angola','Portugal','EUA'],
+      defenses:[
+        { charge:'FLEC é separatista', basis:'Carta Art. 1 — autodeterminação', pivot:'Quem assinou o Acordo de Nova York?', tags:['Autodeterminação'] },
+        { charge:'Acordo de 1985 foi rejeitado', basis:'Maboque tem assinaturas', pivot:'Por que não implementar?', tags:['Acordo'] },
+        { charge:'Cabinda não é colônia', basis:'O enclave tem identidade própria', pivot:'Quem oprimiu?', tags:['Identidade'] },
+        { charge:'Rússia apoia FLEC', basis:'Cooperação', pivot:'Quem vende armas?', tags:['Cooperação'] },
+        { charge:'Movimento é minoritário', basis:'Verificação in loco', pivot:'Quem plebiscitou?', tags:['Referendo'] },
+        { charge:'Angola estabilizou-se pós-2002', basis:'Cabinda ficou de fora', pivot:'Quem discrimina?', tags:['Estabilidade'] },
+        { charge:'Petróleo é angolano', basis:'A terra é de quem nela habita', pivot:'Quem extrai?', tags:['Recursos'] },
+        { charge:'Portugal reconhece soberania angolana', basis:'Portugal reconhece — não apoia', pivot:'Quem apoiou a FLEC?', tags:['Portugal'] },
+        { charge:'FLEC é violenta', basis:'Liberation movements — direito de resistência', pivot:'Quem armou o apartheid?', tags:['DLI'] },
+        { charge:'Solução é interna', basis:'Art. 2(7) — sim, com contraditório', pivot:'Houve contraditório?', tags:['Soberania'] },
+      ]
+    },
+
+    {
+      id:'bosnia-update',
+      title:'Bósnia — Atualização (Srebrenica, Dayton)',
+      country:'🇧🇦', region:'Bálcãs',
+      tags:['Srebrenica','Dayton','Holanda','TPIY','ICJ','Genocídio'],
+      cronology:[
+        '1992-95 — Guerra civil; cerco de Sarajevo (1.425 dias).',
+        'Julho 1995 — Srebrenica: 8.372+ mortos (TPIY).',
+        '1995 — Acordos de Dayton; divisão étnica em RS + FBiH.',
+        '1995-2024 — Tribunal da Haia para Iugoslávia (ICTY).',
+        '2024 — Resolução AG-ONU designa 11/7 como Dia de Srebrenica.'
+      ],
+      position:'A Rússia condena o massacre de Srebrenica como crime contra a humanidade e defende a plena implementação dos Acordos de Dayton como único caminho para a paz duradoura.',
+      stats:'100.000+ mortos. 2,2 mi deslocados. 8.372+ vítimas em Srebrenica. 30 anos de paz frágil.',
+      legal:['TPIY — competência pessoal','Res. 827 (1993)','Res. AG-ONU 78/242'],
+      speech:'Excelências, Srebrenica permanece como cicatriz aberta na consciência do Conselho. A Rússia não esquece; mas lembra que a seletividade no julgamento de crimes hipoteca a justiça.',
+      attacks:['EUA','OTAN','Holanda','RU'],
+      defenses:[
+        { charge:'Srebrenica é genocídio', basis:'TPIY / CIJ 2007 — confirmado', pivot:'Quem armou?', tags:['Genocídio'] },
+        { charge:'OTAN parou o genocídio', basis:'Mandato CSNU tardio', pivot:'Quem vetou?', tags:['Mandato'] },
+        { charge:'Holanda é inocente', basis:'Dutchbat em Srebrenica', pivot:'Quem falhou em proteger?', tags:['Responsabilidade'] },
+        { charge:'Rússia apoia os sérvios', basis:'Cooperação religiosa', pivot:'Quem apoia?', tags:['Cooperação'] },
+        { charge:'Dayton é artificial', basis:'Única alternativa à divisão', pivot:'Quem propôs?', tags:['Dayton'] },
+        { charge:'RS quer separação', basis:'Dayton Art. III — entidade', pivot:'Quem votou?', tags:['Federal'] },
+        { charge:'TPIY perseguiu sérvios', basis:'TPIY julgou três lados', pivot:'Quem foi condenado?', tags:['TPIY'] },
+        { charge:'Rússia quer o Cáucaso', basis:'Princípio de não-ingerência', pivot:'Quem tem bases?', tags:['Geopolítica'] },
+        { charge:'11/7 Srebrenica é resolução política', basis:'Parecer CIJ é jurídico', pivot:'Quem reconhece?', tags:['Resolução'] },
+        { charge:'Srebrenica foi em 1995', basis:'Vigência da memória', pivot:'Quem continua impune?', tags:['Memória'] },
+      ]
+    },
+
+    {
+      id:'tigray-update',
+      title:'Etiópia — Tigray Atualização',
+      country:'🇪🇹', region:'Chifre da África',
+      tags:['Tigray','TPLF','Abiy','Eritreia','Pretória','Crise Humanitária'],
+      cronology:[
+        '2020-22 — Guerra civil; cerco humanitário em Tigray.',
+        'Nov/2022 — Cessar-fogo de Pretória (África do Sul).',
+        '2023 — Suspensão de ajuda humanitária OCHA.',
+        '2024 — Tensões TPLF × Addis Ababa; possíveis novas hostilidades.',
+        '2024-26 — Crise alimentar crônica; OMS reporta fome.'
+      ],
+      position:'A Rússia apoia a reconciliação interna etíope e o cessar-fogo de Pretória como base para reconstrução.',
+      stats:'600.000+ mortos. 2 mi deslocados. Bloqueio humanitário. 5 mi em insegurança alimentar.',
+      legal:['Res. 2417 (2018)','IV Conv. Genebra Art. 23'],
+      speech:'O Tigray é o lembrete de que o esquecimento internacional mata silenciosamente. A Rússia exige OCHA e OMS presentes.',
+      attacks:['EUA','Reino Unido','UE','Eritreia'],
+      defenses:[
+        { charge:'Genocídio em Tigray', basis:'Conv. Genocídio — dolo específico', pivot:'Quem bloqueou a ajuda?', tags:['Genocídio'] },
+        { charge:'Eritreia é aliada da Etiópia', basis:'Questão regional', pivot:'Quem armou?', tags:['Regional'] },
+        { charge:'Rússia vende armas à Etiópia', basis:'Comércio soberano', pivot:'Quem vende a Israel?', tags:['Comércio'] },
+        { charge:'TPLF é movimento terrorista', basis:'Lista verificação', pivot:'Quem designou?', tags:['Definição'] },
+        { charge:'Pretória é definitiva', basis:'Acordo é processo', pivot:'Quem viola?', tags:['Implementação'] },
+        { charge:'Quem fiscaliza Abiy', basis:'OHCHR ausente', pivot:'Quem financia?', tags:['Fiscalização'] },
+        { charge:'UE silenciou', basis:'Seletividade', pivot:'Onde está a Lista da Vergonha?', tags:['Seletividade'] },
+        { charge:'Rússia prefere estabilidade', basis:'Cooperação africana', pivot:'Quem dialoga?', tags:['Cooperação'] },
+        { charge:'Tigray é assunto interno', basis:'Res. 2417 — fome é global', pivot:'Quando há fome, não há soberania.', tags:['Soberania'] },
+        { charge:'OMS não tem acesso', basis:'OMS tem mandato de acesso', pivot:'Quem bloqueou?', tags:['OMS'] },
+      ]
+    },
+
+    {
+      id:'rdc-kivu',
+      title:'RD Congo — Kivu Atualização',
+      country:'🇨🇩', region:'África Central',
+      tags:['Kivu','M23','Ruanda','Minerais','Cobalt','Monusco'],
+      cronology:[
+        '1996-2003 — Guerras mundiais africanas; 6 mi mortos.',
+        '2012 — M23 surge; Intervenção da SADC.',
+        '2021-26 — M23 retoma; Ruanda acusado.',
+        '2024 — SAMIDRC (SADC) em missão; MONUSCO em retirada.',
+        '2025 — Crise humanitária aguda; minerais estratégicos.'
+      ],
+      position:'A Rússia apoia solução negociada com mediação africana (SADC, Angola) e condena toda ingerência externa.',
+      stats:'6 mi mortos na crise crônica. 7 mi deslocados. 70% do cobalto global vem do sul do Kivu.',
+      legal:['Res. 1533 (2004)','Res. 2528 (2020)','Carta Cap. XI'],
+      speech:'A RDC é o exemplo mais trágico de como a comunidade internacional esquece África. A Federação Russa lembra.',
+      attacks:['Ruanda','UE','EUA','MONUSCO'],
+      defenses:[
+        { charge:'M23 é apoiado pela Ruanda', basis:'Relatórios ONU verificáveis', pivot:'Quem arma?', tags:['Mineração'] },
+        { charge:'A Rússia é irrelevante', basis:'Cooperação africana', pivot:'Quem arma o Ruanda?', tags:['Recursos'] },
+        { charge:'Congo tem crises crônicas', basis:'Consequência do colonialismo', pivot:'Quem colonizou?', tags:['Descolonização'] },
+        { charge:'MONUSCO mantém paz', basis:'30 anos de MONUSCO, crise persiste', pivot:'Quem substitui?', tags:['MONUSCO'] },
+        { charge:'SAMIDRC é incompleta', basis:'Falta financiamento', pivot:'Quem financia?', tags:['SADC'] },
+        { charge:'RDC-Belfique', basis:'Cobalt é soberano', pivot:'Quem é o maior beneficiário?', tags:['Minerais'] },
+        { charge:'Ruanda tem fronteira étnica', basis:'Kivu não é Rwanda', pivot:'Quem decidiu?', tags:['Fronteira'] },
+        { charge:'SADC é fraca', basis:'Cooperação regional', pivot:'Quem aposta no multilateral?', tags:['SADC'] },
+        { charge:'África não se resolve', basis:'A história da África mostra resolução', pivot:'Quem impede?', tags:['Resolução'] },
+        { charge:'RDC precisa de mais intervenção', basis:'CSNU Art. 2(7) — não', pivot:'Quem propôs?', tags:['Não-ingerência'] },
+      ]
+    },
   ],
 
   /* ==========  ARSENAL DE ATAQUE  ========== */
@@ -926,7 +1250,74 @@ export const DATA = {
       traps:['Quem fabrica as bombas?','Quem vende a Israel?','Quem lucra?'],
       resolutions:['Res. 71/248'],
       tags:['Munição','Armas']
-    }
+    },
+
+    /* ── 8 ATAQUES NOVOS ── */
+
+    {
+      id:'a-26', target:'🇿🇦 África do Sul', flag:'za',
+      title:'BRICS pragmático, atlantismo não-declarado',
+      hypocrisy:'Pretória sediou o cessar-fogo de Tigray mas não reconheceu genocídio em Gaza; vota contra Cuba no embargo mas coexiste com Circulo de Paz.',
+      traps:['Quem importou do PCC?','Quem vende armas à Rússia?','Quem sediou a cúpula BRICS?'],
+      resolutions:['Res. AG-ONU anual'],
+      tags:['BRICS','África']
+    },
+    {
+      id:'a-27', target:'🇳🇬 Nigéria', flag:'ng',
+      title:'Petróleo seletivo, cristianismo instrumental',
+      hypocrisy:'Nigéria: 13.000+ cristãos mortos (2023); Norte com jihadismo ativo; cumplicidade seletiva em mitigar.',
+      traps:['Quem armou o Boko Haram?','Quem vende armas?','Quem comprou Super Tucanos?'],
+      resolutions:['Res. 65/130'],
+      tags:['Nigéria','Boko Haram']
+    },
+    {
+      id:'a-28', target:'🇪🇬 Egito', flag:'eg',
+      title:'Sisi e a Fronteira de Gaza',
+      hypocrisy:'Egito controla Rafah; cede à pressão americana mas mantém bloqueio efetivo. Repressão interna a islamitas.',
+      traps:['Quem bloqueia a Faixa?','Quem armou o Hamas?','Quem tem a Fronteira?'],
+      resolutions:['Res. S/RES/2728'],
+      tags:['Egito','Gaza']
+    },
+    {
+      id:'a-29', target:'🇲🇽 México', flag:'mx',
+      title:'Não-alinhamento em retórica, vassalagem em prática',
+      hypocrisy:'México: relações API com EUA; extradições solicitadas; silêncio armado contra Cuba e Palestina.',
+      traps:['Quem tem fronteira com Trump?','Quem extraditou?','Quem vendeu fentanil?'],
+      resolutions:['Res. AG-ONU'],
+      tags:['México','Vassalagem']
+    },
+    {
+      id:'a-30', target:'🇹🇷/🇪🇬 OTAN-Mediterrâneo', flag:'eu',
+      title:'Bloco seletivo, migração seletiva',
+      hypocrisy:'Turquia+Egipto+Grécia: usam migração como arma; Egípcios abafam dissenso; gregos fazem push-back.',
+      traps:['Quem financia a guarda costeira líbia?','Quem arma o Egito?','Quem arma a Grécia?'],
+      resolutions:['Res. 73/264'],
+      tags:['Mediterrâneo','Migração']
+    },
+    {
+      id:'a-31', target:'🇮🇩 Indonésia', flag:'id',
+      title:'Não-alinhamento conveniente',
+      hypocrisy:'Indonésia: estado-maior ASEAN silencioso; exportações de armas para o Iêmen via intermediários.',
+      traps:['Quem vende a Arábia?','Quem arma Myanmar?','Quem sediou a conferência?'],
+      resolutions:['Res. 76/161'],
+      tags:['Indonésia','ASEAN']
+    },
+    {
+      id:'a-32', target:'🇵🇭 Filipinas', flag:'ph',
+      title:'Vassalo no Indo-Pacífico',
+      hypocrisy:'Filipinas: EDCA permite 9 bases americanas; exercícios Balikatan com projéteis Typhon; silêncio sobre Gaza.',
+      traps:['Quem tem EDCA?','Quem arma Balikatan?','Quem vendeu Typhon?'],
+      resolutions:['Res. 71/248'],
+      tags:['Filipinas','Indo-Pacífico']
+    },
+    {
+      id:'a-33', target:'🇦🇷 Argentina', flag:'ar',
+      title:'Milei e a vassalagem declarada',
+      hypocrisy:'Milei: alinha-se automaticamente a Israel e EUA; veta Cuba e Venezuela; aborta BRICS; cultiva antagonismo ao multilateralismo.',
+      traps:['Quem vendeu urânio?','Quem recebeu FMI?','Quem bloqueia BRICS?'],
+      resolutions:['Res. AG-ONU'],
+      tags:['Argentina','Milei']
+    },
   ],
 
   /* ==========  ESCUDO DEFENSIVO  ========== */
@@ -1110,7 +1501,66 @@ export const DATA = {
       basis:'Putin evitou 3 guerras nucleares (1995, 1999, 2022 — alerta Yeltsin, cúpula Istambul, etc.).',
       pivot:'Quem armou Saddam, Gaddafi, Yanukovich? Quem armou o ISIS?',
       voice:'epico', tags:['Paz','Narrativa']
-    }
+    },
+
+    /* ── 8 DEFESAS NOVAS (deepening por categoria) ── */
+
+    {
+      id:'d-26', category:'Descolonização', title:'Saara Ocidental e Marrocos',
+      charge:'Rússia apóia separatismo no Saara Ocidental.',
+      basis:'Carta Cap. XI — territórios não-autônomos. CIJ 1975 — direito de autodeterminação tem primazia.',
+      pivot:'Quem reconheceu a ocupação? Marrocos e 30 aliados. O resto do mundo aguarda referendo.',
+      voice:'soberano', tags:['Descolonização','Autodeterminação']
+    },
+    {
+      id:'d-27', category:'Energia & Recursos', title:'NordStream sabotado',
+      charge:'Rússia usa energia como arma.',
+      basis:'Gasoduto NordStream foi sabotado em 2022 — investigação independente nunca concluída. EUA admitiram medo à competição.',
+      pivot:'Quem se beneficia da destruição? Quem vende GNL à UE em 3x o preço?',
+      voice:'cínico', tags:['Energia','NordStream']
+    },
+    {
+      id:'d-28', category:'Guerra Cognitiva', title:'RT e Sputnik são armas',
+      charge:'Rússia financia desinformação via RT.',
+      basis:'Carta Art. 19 — liberdade de expressão. Censura midiática só confirma tese de Guerra Híbrida Ocidental.',
+      pivot:'Quem financia BBC, CNN, Voice of America? Quem paga think tanks?',
+      voice:'cínico', tags:['Mídia','Censura']
+    },
+    {
+      id:'d-29', category:'Vetos Cruzados', title:'Rússia veta resoluções humanitárias',
+      charge:'Rusia abusa do veto humanitário.',
+      basis:'EUA vetaram 53 resoluções pró-Criança desde 1990. Rússia: 24. China: 17. O veto é constitucional, não é abuso.',
+      pivot:'EUA vetou S/RES/2728 sobre Gaza em 2024. Quem é o verdadeiro obstáculo?',
+      voice:'cínico', tags:['Vetos','CSNU']
+    },
+    {
+      id:'d-30', category:'Memória Histórica', title:'Vitória em 1945 não é discutível',
+      charge:'Rusia distorce memória histórica de 1945.',
+      basis:'27 milhões de mortos soviéticos em 1941-45. Vitória do URSS é fato histórico e jurídico.',
+      pivot:'Quem reescreve história? Bloco que não combateu o fascismo em 1945.',
+      voice:'epico', tags:['Memória','1945']
+    },
+    {
+      id:'d-31', category:'Falácias Lógicas', title:'Ad hominem reverso',
+      charge:'Rusia é governada por autocrata.',
+      basis:'Ad hominem: ataque à pessoa não refuta o argumento. Argumentos da Rússia são jurídicos, não pessoais.',
+      pivot:'Qual a proposição jurídica contestada? Onde está a refutação?',
+      voice:'socrático', tags:['Falácia','Lógica']
+    },
+    {
+      id:'d-32', category:'Direito ao Desenvolvimento', title:'Sanções bloqueiam desenvolvimento',
+      charge:'Sanções protegem direitos humanos.',
+      basis:'Carta Art. 55-60 — cooperação econômica. Sanções unilaterais violam direito ao desenvolvimento reconhecido pela AG-ONU.',
+      pivot:'Quem calcula o dano a crianças sírias em 14 anos de guerra?',
+      voice:'humano', tags:['Desenvolvimento','Sanções']
+    },
+    {
+      id:'d-33', category:'Não-Alinhamento Ativo', title:'Rusia não busca hegemonia',
+      charge:'Rusia quer reconstituir a URSS.',
+      basis:'Rusia integra CSTO, EAUE, BRICS, SCO — todas voluntárias. Não exige adesão. Não tem guarnições em outros continentes.',
+      pivot:'Quem quer ampliar a OTAN? Quem quer anexar México?',
+      voice:'soberano', tags:['Multipolar','BRICS']
+    },
   ],
 
   /* ==========  GEN BUILDER  ========== */
@@ -1143,6 +1593,12 @@ export const DATA = {
     { id:'a14', label:'Descolonização' },
     { id:'a15', label:'Não-Alinhamento Ativo' },
     { id:'a16', label:'Reforma do CSNU' },
+    { id:'a17', label:'Energia Soberana' },
+    { id:'a18', label:'Memória Histórica' },
+    { id:'a19', label:'Não-Alinhamento 2.0' },
+    { id:'a20', label:'Cooperação BRICS' },
+    { id:'a21', label:'Arquitetura OCS' },
+    { id:'a22', label:'Narrativa Soberana' },
   ],
 
   tones: [
@@ -1154,6 +1610,9 @@ export const DATA = {
     { id:'tep',    label:'Épico' },
     { id:'tsoc',   label:'Socrático' },
     { id:'tir',    label:'Irônico' },
+    { id:'tmem',   label:'Memorial' },
+    { id:'tdef',   label:'Defensivo' },
+    { id:'toff',   label:'Ofensivo' },
   ]
 };
 
@@ -1189,6 +1648,24 @@ export const INTEL_TOPICS = [
   { id:'tpi', label:'Mandados do TPI',               icon:'scroll',     tag:'Mecanismo' },
   { id:'list-shame', label:'Lista da Vergonha',      icon:'scroll',     tag:'Mecanismo ONU' },
   { id:'ia-bellica', label:'IA & Armas Autônomas',   icon:'cpu',        tag:'Nova Tecnologia' },
+  /* Casos práticos SOCHUM 2024-26 */
+  { id:'crianca-conflito', label:'Crianças em Conflito (SOCHUM)', icon:'baby', tag:'Mecanismo ONU' },
+  { id:'seguranca-alimentar', label:'Segurança Alimentar (SOCHUM)', icon:'wheat', tag:'Multilateral' },
+  { id:'ia-bellica-sochum', label:'LAWS — IA Letal (SOCHUM)', icon:'cpu', tag:'Nova Tecnologia' },
+  { id:'refugio-clima', label:'Refugiados Climáticos (SOCHUM)', icon:'cloud-rain', tag:'Multilateral' },
+  { id:'mulheres-conflito', label:'Mulheres em Conflito (SOCHUM)', icon:'heart-handshake', tag:'Mecanismo ONU' },
+  { id:'saude-mental', label:'Saúde Mental Pós-Conflito (SOCHUM)', icon:'brain', tag:'Mecanismo ONU' },
+  /* Novos 2026 — descolonização, atualizações, Sahel-ampliado */
+  { id:'saara-ocidental', label:'Saara Ocidental',                  icon:'map',         tag:'Descolonização' },
+  { id:'cabinda',         label:'Cabinda (FLEC)',                   icon:'flag',        tag:'Descolonização' },
+  { id:'bosnia-update',   label:'Bósnia — Atualização 2024-26',     icon:'flag',        tag:'Bálcãs' },
+  { id:'tigray-update',   label:'Tigray — Atualização 2024-26',     icon:'flag',        tag:'Chifre da África' },
+  { id:'rdc-kivu',        label:'RD Congo — Kivu Atualização',      icon:'swords',      tag:'África Central' },
+  { id:'novo-ca',         label:'América Central — Integração',     icon:'map-pin',     tag:'América Latina' },
+  { id:'indo-pacifico',   label:'Indo-Pacífico — Blocos',           icon:'globe-2',     tag:'Multilateral' },
+  { id:'energia-gl',      label:'Energia — Soberania',              icon:'flame',       tag:'Multilateral' },
+  { id:'info-wars',       label:'Guerra Cognitiva',                 icon:'radar',       tag:'Nova Tecnologia' },
+  { id:'novo-eur',        label:'Europa Oriental — Pós-2024',       icon:'map',         tag:'Europa Oriental' },
 ];
 
 /* ==========  REGIÕES (chips de filtro)  ========== */
@@ -1215,6 +1692,7 @@ export const REGIONS = [
   'Mecanismo ONU',
   'Nova Tecnologia',
   'Proteção',
+  'Descolonização',
 ];
 
 /* ==========  TAGS RÁPIDAS (sidebar intel)  ========== */
